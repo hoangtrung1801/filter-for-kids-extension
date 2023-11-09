@@ -29,10 +29,10 @@ export default class ImageFilter extends Filter {
         const { result } = res
         console.log("6. final", result)
         if ([NSFW_CLASSES[0], NSFW_CLASSES[2]].includes(result[0].className)) {
-          console.log(img, " is neutral")
-          img.style.filter = "blur(25px)"
+          console.log({img}, " is neutral")
         } else {
-          console.log(img, " is nsfw")
+          img.style.filter = "blur(25px)"
+          console.log({img}, " is nsfw")
         }
       })
     }
