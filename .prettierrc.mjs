@@ -3,8 +3,8 @@
  */
 export default {
   printWidth: 80,
-  tabWidth: 2,
-  useTabs: false,
+  tabWidth: 4,
+  useTabs: true,
   semi: true,
   singleQuote: false,
   trailingComma: "none",

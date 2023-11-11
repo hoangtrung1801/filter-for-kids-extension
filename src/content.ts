@@ -1,41 +1,43 @@
-import type { PlasmoCSConfig } from "plasmo"
+import type { PlasmoCSConfig } from "plasmo";
 
-import DOMWatcher from "~lib/content/DomWatcher"
-import ImageFilter from "~lib/content/filters/ImageFilter"
-import loadImage from "~lib/content/loadImage"
-import type Request from "~lib/Request"
-import { IType } from "~lib/Request"
+import DOMWatcher from "~lib/content/DomWatcher";
+import ImageFilter from "~lib/content/filters/ImageFilter";
+import loadImage from "~lib/content/loadImage";
+import type Request from "~lib/Request";
+import { IType } from "~lib/Request";
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://*/*", "http://*/*"],
-  all_frames: true,
-  run_at: "document_start"
-}
+	matches: ["https://www.google.com/*"],
+	all_frames: true,
+	run_at: "document_start"
+};
 
 chrome.runtime.onMessage.addListener(
-  (message: Request, sender, sendResponse) => {
-    if (!message) return
+	async (message: Request, sender, sendResponse) => {
+		console.log("background message", message);
+		if (!message) return;
 
-    console.log("4.1. request getting image data", message)
-    switch (message.type) {
-      case IType.IMG_DATA:
-        loadImage(message.payload, (imageData) => sendResponse(imageData))
-        return true
-      default:
-        break
-    }
-  }
-)
+		console.log("4.1. request getting image data", message);
+		switch (message.type) {
+			case IType.IMG_DATA:
+				const imageData = await loadImage(message.payload);
+				sendResponse(imageData);
+				return true;
+			default:
+				break;
+		}
+	}
+);
 
 const init = async (): Promise<void> => {
-  console.log("hello, wolrd [plugin]")
+	console.log("hello, wolrd [plugin]");
 
-  const imageFilter = new ImageFilter()
-  const domWatcher = new DOMWatcher(imageFilter)
+	const imageFilter = new ImageFilter();
+	const domWatcher = new DOMWatcher(imageFilter);
 
-  domWatcher.watch()
-}
+	domWatcher.watch();
+};
 
 if (window.self === window.top) {
-  init()
+	init();
 }

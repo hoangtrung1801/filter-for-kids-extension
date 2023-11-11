@@ -1,3 +1,11 @@
-class Model {}
+import type { IType } from "~lib/Request";
 
-export default Model
+class Model {
+	public type: IType;
+
+	public process(payload: any): Promise<boolean> {
+		throw new Error("Method not implemented.");
+	}
+}
+
+export default Model;
