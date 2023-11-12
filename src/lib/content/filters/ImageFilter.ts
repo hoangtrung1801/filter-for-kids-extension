@@ -24,11 +24,12 @@ export default class ImageFilter extends Filter {
 		const req = new Request(IType.IMAGE, imgData, {
 			url: img.src
 		});
-		console.log("1. analyze image, send request", req);
 		chrome.runtime.sendMessage(req, (res: Response) => {
-			// console.log("6. final", res)
+			if (!res) {
+				img.style.border = "10px solid gray";
+				return;
+			}
 			const { result } = res;
-			console.log("6. final", result);
 			if (result) {
 				img.style.filter = "blur(25px)";
 				console.log({ img }, " is nsfw");

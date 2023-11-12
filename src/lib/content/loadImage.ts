@@ -26,7 +26,6 @@ const loadImage = (src: string) =>
 				ctx.drawImage(img, 0, 0);
 				const imageData = ctx.getImageData(0, 0, img.width, img.height);
 
-				console.log("4.2. send back image data");
 				resolve(Array.from(imageData.data));
 			}
 			// Fail out if either dimension is less than MIN_IMG_SIZE.

@@ -30,18 +30,14 @@ export default class DOMWatcher implements IDOMWatcher {
 	}
 
 	private async callback(mutationsList: MutationRecord[]) {
-		// console.log("dom", mutationsList)
 		for (let i = 0; i < mutationsList.length; i++) {
 			const mutation = mutationsList[i];
-			// if (mutation.target.nodeName === "IMG") {
-			// 	console.log(mutation.target.nodeName);
-			// }
 			// if (
 			// 	mutation.type === "childList" &&
 			// 	mutation.addedNodes.length > 0
 			// ) {
-			await this.filter.analyze(mutation.target);
 			// }
+			await this.filter.analyze(mutation.target);
 		}
 	}
 

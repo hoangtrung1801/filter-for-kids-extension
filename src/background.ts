@@ -1,24 +1,30 @@
 import NSFWModel from "~lib/background/models/NSFWModel";
+import ViolentModel from "~lib/background/models/ViolentModel";
 import QueueWrapper from "~lib/background/queue/QueueWrapper";
 import Request, { IType } from "~lib/Request";
 import Response from "~lib/Response";
 
 const nsfwModel = new NSFWModel("../../models/nsfw-mobilenet/model.json");
-const queue = new QueueWrapper([nsfwModel], 0);
+const violentModel = new ViolentModel("../../models/violence-model/model.json");
+const queue = new QueueWrapper([nsfwModel], 1000);
 
 chrome.runtime.onMessage.addListener(
 	async (message: Request, sender, sendResponse) => {
-		console.log({ message });
 		const tabId = sender.tab.id;
 
-		if (message.type === IType.IMAGE) {
-			const prediction = await queue.predictImage(
-				// message.payload as string,
-				message.payload,
-				tabId,
-				message.meta?.url
-			);
-			sendResponse(new Response(prediction));
+		try {
+			if (message.type === IType.IMAGE) {
+				const prediction = await queue.predictImage(
+					// message.payload as string,
+					message.payload,
+					tabId,
+					message.meta?.url
+				);
+				sendResponse(new Response(prediction));
+			}
+		} catch (e) {
+			console.error(e);
+			sendResponse(undefined);
 		}
 	}
 );
@@ -32,9 +38,6 @@ const init = async () => {
 	 */
 	async function clickMenuCallback(info, tab) {
 		const message = { action: "IMAGE_CLICKED", url: info.srcUrl };
-		// console.log({ message });
-		// processImage(info.srcUrl, tab.id)
-
 		const prediction = await queue.predictImage(info.srcUrl, tab.id);
 		console.log({ prediction });
 	}

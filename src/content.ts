@@ -14,10 +14,8 @@ export const config: PlasmoCSConfig = {
 
 chrome.runtime.onMessage.addListener(
 	async (message: Request, sender, sendResponse) => {
-		console.log("background message", message);
 		if (!message) return;
 
-		console.log("4.1. request getting image data", message);
 		switch (message.type) {
 			case IType.IMG_DATA:
 				const imageData = await loadImage(message.payload);

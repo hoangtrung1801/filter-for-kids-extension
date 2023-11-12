@@ -1,7 +1,6 @@
-import { url } from "inspector";
 import * as tf from "@tensorflow/tfjs";
 
-import Request, { IType } from "~lib/Request";
+import { IType } from "~lib/Request";
 
 import getTopKClasses from "../getTopKClasses";
 import Model from "./Model";
@@ -17,34 +16,29 @@ export const NSFW_CLASSES: {
 };
 
 export default class NSFWModel extends Model {
-	model: tf.LayersModel | tf.GraphModel;
-	modelPath: string;
-	private IMG_SIZE = 224;
-	private LOADING_TIMEOUT = 5000;
-
 	constructor(modelPath: string) {
-		super();
+		super(modelPath);
 
-		this.type = IType.IMAGE;
-		this.IMG_SIZE = 224;
-		this.modelPath = modelPath;
+		this.name = "NSFW Model";
 
 		this.loadModel();
 	}
 
-	private async loadModel() {
-		console.log("Loading model...");
+	protected async loadModel() {
+		console.log(`Loading ${this.name}...`);
 		const startTime = performance.now();
 		try {
 			this.model = await tf.loadLayersModel(this.modelPath);
 			tf.tidy(() => {
-				this.model.predict(tf.zeros([1, 224, 224, 3]));
+				this.model.predict(
+					tf.zeros([1, this.IMG_SIZE, this.IMG_SIZE, 3])
+				);
 			});
 
 			const totalTime = Math.floor(performance.now() - startTime);
-			console.log("Model loaded  in ", totalTime, "ms");
+			console.log(`${this.name} loaded  in `, totalTime, "ms");
 		} catch (e) {
-			console.error("Failed to load model", e);
+			console.error(`Failed to load ${this.name}`, e);
 		}
 	}
 
@@ -88,13 +82,12 @@ export default class NSFWModel extends Model {
 				const { imgData, tabId } = payload;
 				const imageData = new ImageData(
 					Uint8ClampedArray.from(imgData),
-					224,
-					224
+					this.IMG_SIZE,
+					this.IMG_SIZE
 				);
 				const prediction = await this.analyze(imageData);
 				const topK = await getTopKClasses(prediction);
 
-				console.log("6. final", prediction);
 				if (
 					[NSFW_CLASSES[0], NSFW_CLASSES[2]].includes(
 						topK[0].className
@@ -104,45 +97,8 @@ export default class NSFWModel extends Model {
 				} else {
 					resolve(true);
 				}
-
-				// const payload = new Request(IType.IMG_DATA, url);
-				// console.log(
-				// 	"3. send request to get image data (background)",
-				// 	payload
-				// );
-				// chrome.tabs.sendMessage(
-				// 	tabId,
-				// 	{ type: IType.IMG_DATA, payload: imgData },
-				// 	async (res) => {
-				// 		console.log("5. get image data", res);
-				// 		const imageData = new ImageData(
-				// 			Uint8ClampedArray.from(res),
-				// 			224,
-				// 			224
-				// 		);
-				// 		const prediction = await this.analyze(imageData);
-				// 		const topK = await getTopKClasses(prediction);
-
-				// 		console.log("6. final", prediction);
-				// 		if (
-				// 			[NSFW_CLASSES[0], NSFW_CLASSES[2]].includes(
-				// 				topK[0].className
-				// 			)
-				// 		) {
-				// 			resolve(false);
-				// 		} else {
-				// 			resolve(true);
-				// 		}
-				// 	}
-				// );
-				// setTimeout(
-				// 	reject,
-				// 	this.LOADING_TIMEOUT,
-				// 	new Error(`Image load timeout ${this.LOADING_TIMEOUT}`)
-				// );
 			} catch (e) {
 				console.error("Cannot predict image", e);
-				// return false
 				reject(e);
 			}
 		});

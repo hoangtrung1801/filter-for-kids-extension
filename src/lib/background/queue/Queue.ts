@@ -25,24 +25,26 @@ class Queue {
 	public timeout: number;
 
 	private tasks: Task[];
+	private running: boolean;
+
 	protected cache: Map<string, boolean> = new Map();
 	protected requestMap: Map<string, QueueRequest> = new Map();
 
 	constructor(models: Model[], timeout: number) {
 		this.models = models;
 		this.timeout = timeout;
+		this.running = false;
 
 		this.tasks = [];
 	}
 
 	protected add(task: Task) {
-		console.log("add function", task);
-		if (this.tasks.length === 0) {
-			this.process(task);
-			return;
-		}
-
 		this.tasks.push(task);
+
+		if (!this.running) {
+			this.running = true;
+			this.process();
+		}
 	}
 
 	protected shift() {
@@ -51,8 +53,9 @@ class Queue {
 
 	// private next(task: Task) {}
 
-	private async process(task: Task) {
-		console.log("queue is processing", task);
+	private async process() {
+		const task = this.shift();
+		console.info("I AM PROCESSING", task);
 		// model predict
 		const {
 			type,
@@ -61,9 +64,11 @@ class Queue {
 			meta: { url }
 		} = task;
 		if (type === IType.IMAGE) {
-			for (const model of this.models.filter(
-				(model) => model.type === IType.IMAGE
-			)) {
+			const model = this.models[0];
+			// for (const model of this.models.filter(
+			// 	(model) => model.type === IType.IMAGE
+			// )) {
+			try {
 				const prediction = await model.process({
 					imgData: content,
 					tabId
@@ -72,42 +77,23 @@ class Queue {
 				this.requestMap
 					.get(url)
 					?.forEach(({ resolve }) => resolve(prediction));
+			} catch {
+				this.requestMap
+					.get(url)
+					?.forEach(({ reject }) =>
+						reject(new Error("cannot predictting"))
+					);
 			}
 		} else if (type === IType.TEXT) {
 		}
 
+		console.log("REST", this.tasks.length);
 		if (this.tasks.length > 0) {
-			const newTask = this.tasks.shift();
-			setTimeout(() => this.process(newTask), this.timeout);
+			setTimeout(() => this.process(), this.timeout);
+		} else {
+			this.running = false;
 		}
 	}
-
-	// private processImage(url: string, tabId: number): Promise<any> {
-	// 	new Promise((resolve, reject) => {
-	// 		try {
-	// 			const payload = new Request(IType.IMG_DATA, url);
-	// 			console.log(
-	// 				"3. send request to get image data (background)",
-	// 				payload
-	// 			);
-	// 			chrome.tabs.sendMessage(tabId, payload, (res) => {
-	// 				console.log("5. get image data", res);
-	// 				const imageData = new ImageData(
-	// 					Uint8ClampedArray.from(res),
-	// 					224,
-	// 					224
-	// 				);
-	// 				nsfwModel
-	// 					.analyze(imageData)
-	// 					.then((prediction) => resolve(prediction));
-	// 			});
-	// 		} catch (e) {
-	// 			console.error("Cannot predict image", e);
-	// 			// return false
-	// 			reject(e);
-	// 		}
-	// 	});
-	// }
 }
 
 export default Queue;

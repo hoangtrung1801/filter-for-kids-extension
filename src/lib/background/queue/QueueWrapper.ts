@@ -11,16 +11,15 @@ class QueueWrapper extends Queue {
 		url?: string
 	): Promise<boolean> {
 		return new Promise((resolve, reject) => {
-			console.log("predictImage");
 			if (this.cache.has(url)) {
-				console.log("cache hit");
+				console.warn("cache hit");
 				resolve(this.cache.get(url) as boolean);
 				return;
 			} else if (this.requestMap.has(url)) {
-				console.log("it is in queue");
+				console.warn("it is in queue");
 				this.requestMap.get(url).push({ resolve, reject });
 			} else {
-				console.log("add to queue");
+				console.warn("add to queue");
 				this.requestMap.set(url, [{ resolve, reject }]);
 				this.add({
 					type: IType.IMAGE,
