@@ -6,7 +6,7 @@ import Response from "~lib/Response";
 
 const nsfwModel = new NSFWModel("../../models/nsfw-mobilenet/model.json");
 const violentModel = new ViolentModel("../../models/violence-model/model.json");
-const queue = new QueueWrapper([nsfwModel], 1000);
+const queue = new QueueWrapper([nsfwModel, violentModel], 100);
 
 chrome.runtime.onMessage.addListener(
 	async (message: Request, sender, sendResponse) => {

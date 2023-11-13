@@ -20,6 +20,7 @@ export default class NSFWModel extends Model {
 		super(modelPath);
 
 		this.name = "NSFW Model";
+		this.type = IType.IMAGE;
 
 		this.loadModel();
 	}

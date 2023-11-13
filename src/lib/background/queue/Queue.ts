@@ -64,25 +64,25 @@ class Queue {
 			meta: { url }
 		} = task;
 		if (type === IType.IMAGE) {
-			const model = this.models[0];
-			// for (const model of this.models.filter(
-			// 	(model) => model.type === IType.IMAGE
-			// )) {
 			try {
-				const prediction = await model.process({
-					imgData: content,
-					tabId
-				});
+				const result = [];
+				for (const model of this.models.filter(
+					(model) => model.type === IType.IMAGE
+				)) {
+					const prediction = await model.process({
+						imgData: content,
+						tabId
+					});
+					result.push(prediction);
+				}
+				console.log("result", result);
+				const prediction = result.some((result) => result);
 				this.cache.set(url, prediction);
 				this.requestMap
 					.get(url)
 					?.forEach(({ resolve }) => resolve(prediction));
-			} catch {
-				this.requestMap
-					.get(url)
-					?.forEach(({ reject }) =>
-						reject(new Error("cannot predictting"))
-					);
+			} catch (e) {
+				this.requestMap.get(url)?.forEach(({ reject }) => reject(e));
 			}
 		} else if (type === IType.TEXT) {
 		}
