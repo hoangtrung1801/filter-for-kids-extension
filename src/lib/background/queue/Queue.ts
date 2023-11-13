@@ -83,6 +83,8 @@ class Queue {
 					?.forEach(({ resolve }) => resolve(prediction));
 			} catch (e) {
 				this.requestMap.get(url)?.forEach(({ reject }) => reject(e));
+			} finally {
+				this.requestMap.delete(url);
 			}
 		} else if (type === IType.TEXT) {
 		}
