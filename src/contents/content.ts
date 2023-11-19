@@ -3,6 +3,7 @@ import type { PlasmoCSConfig } from "plasmo";
 import DOMWatcher from "~lib/content/DomWatcher";
 import ImageFilter from "~lib/content/filters/ImageFilter";
 import loadImage from "~lib/content/loadImage";
+import { initTextPopup } from "~lib/content/text/textPopup";
 import type Request from "~lib/Request";
 import { IType } from "~lib/Request";
 
@@ -28,7 +29,7 @@ chrome.runtime.onMessage.addListener(
 );
 
 const init = async (): Promise<void> => {
-	console.log("hello, wolrd [plugin]");
+	console.log("hello, wolrd [plugin]c");
 
 	const imageFilter = new ImageFilter();
 	const domWatcher = new DOMWatcher(imageFilter);
@@ -38,4 +39,5 @@ const init = async (): Promise<void> => {
 
 if (window.self === window.top) {
 	init();
+	initTextPopup();
 }
