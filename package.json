@@ -31,6 +31,19 @@
   "manifest": {
     "permissions": [
       "contextMenus"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/icon.jpg"
+        ],
+        "matches": [
+          "https://www.google.com/*"
+        ]
+      }
+    ],
+    "host_permissions": [
+      "https://*/*"
     ]
   }
 }

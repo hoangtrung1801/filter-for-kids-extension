@@ -10,7 +10,7 @@ import { IType } from "~lib/Request";
 export const config: PlasmoCSConfig = {
 	matches: ["https://www.google.com/*"],
 	all_frames: true,
-	run_at: "document_start"
+	run_at: "document_start",
 };
 
 chrome.runtime.onMessage.addListener(
