@@ -3,25 +3,14 @@ import wordDict from "assets/word.json";
 import iconUrl from "url:~assets/icon.jpg";
 
 export function initTextPopup() {
-	document.addEventListener("mouseup", function (event) {
-		let mousePos = {
-			// x: event.clientX + window.scrollX,
-			// y: event.clientY + window.scrollY
-			x: event.clientX,
-			y: event.clientY
-		};
-
-		console.log(getSelectedText());
-		console.log(acronymDict);
-		console.log(wordDict);
-		console.log(iconUrl);
-		console.log(mousePos);
-
-		popupIcon(mousePos);
-	});
+	document.addEventListener("mouseup", popupIcon);
 }
-function popupIcon(mousePos) {
-	const iconCheck = document.querySelector("img#icon-popup");
+function popupIcon(event) {
+	let mousePos = {
+		x: event.clientX,
+		y: event.clientY
+	};
+	const iconCheck = document.querySelector("div#icon-container");
 	const resultCheck = document.querySelector("div#result-popup");
 
 	if (
@@ -40,31 +29,62 @@ function popupIcon(mousePos) {
 		iconCheck.remove();
 	}
 	if (getSelectedText() && getSelectedText().length > 0) {
-		console.log(getSelectedText());
+		// console.log(getSelectedText());
 		renderIcon(mousePos);
-    renderResult(mousePos)
+		const icon = document.querySelector("div#icon-container");
+		if (icon) {
+			icon.addEventListener("click", async () => {
+				const icon = document.querySelector("div#icon-container");
+				icon.remove();
+				renderResult(mousePos);
+			});
+		}
 	}
 }
 
 function getSelectedText(): string {
-	var selectedText: string = window.getSelection().toString();
+	var selectedText: string = window
+		.getSelection()
+		.toString()
+		.trim()
+		.toLowerCase();
 	return selectedText;
 }
 
-function renderResult(mousePos){
-  const result = document.querySelector("div#result-popup");
+function renderResult(mousePos) {
+	const resultContainer = document.createElement("div");
+	resultContainer.id = "result-popup";
+
+	fetch(chrome.runtime.getURL("/html/container.html"))
+		.then((response) => response.text())
+		.then((htmlContent) => {
+			resultContainer.innerHTML = htmlContent;
+		});
+
+	resultContainer.style.background = "white";
+	resultContainer.style.color = "black";
+	resultContainer.style.fontSize = "20px";
+	resultContainer.style.position = "fixed";
+	resultContainer.style.cursor = "pointer";
+	resultContainer.style.top = mousePos.y + "px";
+	resultContainer.style.left = mousePos.x + "px";
+
+	document.body.appendChild(resultContainer);
 }
 
 function renderIcon(mousePos) {
-	var icon = document.createElement("img");
+	const iconContainer = document.createElement("div");
+	iconContainer.id = "icon-container";
+	const icon = document.createElement("img");
+	icon.id = "icon-container-img";
 	icon.src = iconUrl;
-	icon.id = "icon-popup";
-	icon.style.position = "fixed";
-	icon.style.cursor = "pointer";
-	icon.style.top = mousePos.y + "px";
-	icon.style.left = mousePos.x + "px";
+	iconContainer.style.position = "fixed";
+	iconContainer.style.cursor = "pointer";
+	iconContainer.style.top = mousePos.y + "px";
+	iconContainer.style.left = mousePos.x + "px";
 
-	document.body.appendChild(icon);
+	iconContainer.appendChild(icon);
+	document.body.appendChild(iconContainer);
 }
 
 // function loadDictionaryAcronym() {
