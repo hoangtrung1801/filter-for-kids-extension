@@ -71,7 +71,7 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 	console.log(mousePos);
 	const resultContainer = document.createElement("div");
 	resultContainer.id = "result-popup";
-	fetch(chrome.runtime.getURL("/html/container.html"))
+	fetch(chrome.runtime.getURL("/html/popup-word-container.html"))
 		.then((response) => response.text())
 		.then((htmlContent) => {
 			resultContainer.innerHTML = htmlContent;
@@ -96,6 +96,21 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 			);
 			const antonymSpanNoun = resultContainer.querySelector(
 				"#noun #antonym-span"
+			);
+			const definitionSpanVerb = resultContainer.querySelector(
+				"#verb #definition-span"
+			);
+			const exampleSpan1Verb = resultContainer.querySelector(
+				"#verb #example-span1"
+			);
+			const exampleSpan2Verb = resultContainer.querySelector(
+				"#verb #example-span2"
+			);
+			const synonymSpanVerb = resultContainer.querySelector(
+				"#verb #synonym-span"
+			);
+			const antonymSpanVerb = resultContainer.querySelector(
+				"#verb #antonym-span"
 			);
 			// if (
 			// 	typeof acronym === "undefined"
@@ -152,21 +167,6 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 					detail[selectedText].noun[0].antonyms[0];
 			}
 
-			const definitionSpanVerb = resultContainer.querySelector(
-				"#verb #definition-span"
-			);
-			const exampleSpan1Verb = resultContainer.querySelector(
-				"#verb #example-span1"
-			);
-			const exampleSpan2Verb = resultContainer.querySelector(
-				"#verb #example-span2"
-			);
-			const synonymSpanVerb = resultContainer.querySelector(
-				"#verb #synonym-span"
-			);
-			const antonymSpanVerb = resultContainer.querySelector(
-				"#verb #antonym-span"
-			);
 			if (definitionSpanVerb) {
 				definitionSpanVerb.textContent =
 					detail[selectedText].verb[0].defination;
