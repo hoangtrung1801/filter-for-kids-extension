@@ -112,6 +112,21 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 			const antonymSpanVerb = resultContainer.querySelector(
 				"#verb #antonym-span"
 			);
+			const definitionSpanAdj = resultContainer.querySelector(
+				"#adj #definition-span"
+			);
+			const exampleSpan1Adj = resultContainer.querySelector(
+				"#adj #example-span1"
+			);
+			const exampleSpan2Adj = resultContainer.querySelector(
+				"#adj #example-span2"
+			);
+			const synonymSpanAdj = resultContainer.querySelector(
+				"#adj #synonym-span"
+			);
+			const antonymSpanAdj = resultContainer.querySelector(
+				"#adj #antonym-span"
+			);
 			// if (
 			// 	typeof acronym === "undefined"
 			// ) {
@@ -146,6 +161,7 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 			if (wordSpan) {
 				wordSpan.textContent = selectedText;
 			}
+			//noun
 			if (definationSpanNoun) {
 				definationSpanNoun.textContent =
 					detail[selectedText].noun[0].defination;
@@ -166,7 +182,7 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 				antonymSpanNoun.textContent =
 					detail[selectedText].noun[0].antonyms[0];
 			}
-
+			//verb
 			if (definitionSpanVerb) {
 				definitionSpanVerb.textContent =
 					detail[selectedText].verb[0].defination;
@@ -187,12 +203,35 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 				antonymSpanVerb.textContent =
 					detail[selectedText].verb[0].antonyms[0];
 			}
+			//adj
+			if (definitionSpanAdj) {
+				definitionSpanAdj.textContent =
+					detail[selectedText].adj[0].defination;
+			}
+			if (exampleSpan1Adj) {
+				exampleSpan1Adj.textContent =
+					detail[selectedText].adj[0].example[0];
+			}
+			if (exampleSpan2Adj) {
+				exampleSpan2Adj.textContent =
+					detail[selectedText].adj[0].example[1];
+			}
+			if (synonymSpanAdj) {
+				synonymSpanAdj.textContent =
+					detail[selectedText].adj[0].synonyms[0];
+			}
+			if (antonymSpanAdj) {
+				antonymSpanAdj.textContent =
+					detail[selectedText].adj[0].antonyms[0];
+			}
 		});
 	
 	resultContainer.style.background = "white";
 	resultContainer.style.color = "black";
 	resultContainer.style.fontSize = "15px";
 	resultContainer.style.position = "absolute";
+	resultContainer.style.borderRadius = "20px";
+	resultContainer.style.zIndex = "999";
 	resultContainer.style.cursor = "pointer";
 	resultContainer.style.top = mousePos.y + "px";
 	resultContainer.style.left = mousePos.x + "px";
