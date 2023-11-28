@@ -5,10 +5,10 @@
                 "defination": "Bò là tên gọi chung để chỉ các loài động vật trong chi động vật có vú ",
                 "example": [
                     "Con bò đang ăn cỏ",
-                    " Đó có thể là những buổi chiều tuổi thơ chăn bò, thả diều cùng bạn"
+                    "Đó có thể là những buổi chiều tuổi thơ chăn bò, thả diều cùng bạn"
                 ],
                 "synonyms": [
-                    ""
+                    
                 ],
                 "antonyms": []
             }
@@ -18,13 +18,13 @@
                 "defination": "hành động di chuyển",
                 "example": [
                     "Con gián đang bò dưới sàn nhà",
-                    "trẻ sẽ tập bò trong độ tuổi từ 6 tháng đến 12 tháng."
+                    "Trẻ sẽ tập bò trong độ tuổi từ 6 tháng đến 12 tháng."
                 ],
                 "synonyms": [
-                    ""
+                    "đứng yên"
                 ],
                 "antonyms": [
-                    ""
+                    "di chuyển"
                 ]
             }
         ],
@@ -67,11 +67,8 @@
         ],
         "verb": [
             {
-                "defination": "mô tả",
-                "example": [
-                    "ngôi nhà này to lớn quá",
-                    "nhà của tôi ở huyện kế bên"
-                ],
+                "defination": "",
+                "example": [],
                 "synonyms": [
                     ""
                 ],
@@ -82,10 +79,9 @@
         ],
         "adj": [
             {
-                "defination": "mô tả",
+                "defination": "",
                 "example": [
-                    "ngôi nhà này to lớn quá",
-                    "nhà của tôi ở huyện kế bên"
+    
                 ],
                 "synonyms": [
                     ""
