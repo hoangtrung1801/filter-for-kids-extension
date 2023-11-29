@@ -2,8 +2,6 @@ import type { PlasmoCSConfig } from "plasmo";
 
 export const config: PlasmoCSConfig = {
 	matches: ["https://*/*"],
-	all_frames: true,
-	run_at: "document_start"
 };
 
 
