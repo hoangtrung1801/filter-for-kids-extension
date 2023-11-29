@@ -31,6 +31,16 @@
   "manifest": {
     "permissions": [
       "contextMenus"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/*.json"
+          ],
+        "matches": [
+          "https://*/*"
+        ]
+      }
     ]
   }
 }
