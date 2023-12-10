@@ -143,11 +143,7 @@
       this[globalName] = mainExports;
     }
   }
-<<<<<<< HEAD
-})({"5toj7":[function(require,module,exports) {
-=======
 })({"h6q7A":[function(require,module,exports) {
->>>>>>> sang
 var global = arguments[3];
 var W = Object.create;
 var P = Object.defineProperty;
@@ -180,11 +176,7 @@ var c = {
     ],
     "host": "localhost",
     "port": 1815,
-<<<<<<< HEAD
-    "entryFilePath": "D:\\Data\\Documents\\eSTI\\Extension\\filter-for-kids-extension\\.plasmo\\static\\popup.tsx",
-=======
     "entryFilePath": "C:\\Users\\Ad\\Desktop\\Document\\eSTI\\filter-for-kids-extension\\.plasmo\\static\\popup.tsx",
->>>>>>> sang
     "bundleId": "585f4e9c7d3dc21e",
     "envHash": "e792fbbdaa78ee84",
     "verbose": "false",
@@ -401,11 +393,7 @@ function N(e) {
         A(`[plasmo/parcel-runtime]: Connection to the HMR server is closed for ${c.entryFilePath}`);
     }), t;
 }
-<<<<<<< HEAD
-var U = K(require("66e8dd99de0e3d8"));
-=======
 var j = z(require("2d0b810da864a1e0"));
->>>>>>> sang
 async function F() {
     j.default.injectIntoGlobalHook(window), window.$RefreshReg$ = function() {}, window.$RefreshSig$ = function() {
         return function(e) {
@@ -454,11 +442,7 @@ if (!U || !U.isParcelRequire) {
 }
 c.isReact && (p("Injecting react refresh"), F());
 
-<<<<<<< HEAD
-},{"66e8dd99de0e3d8":"iZhE1"}],"iZhE1":[function(require,module,exports) {
-=======
 },{"2d0b810da864a1e0":"iZhE1"}],"iZhE1":[function(require,module,exports) {
->>>>>>> sang
 var oe = Object.create;
 var H = Object.defineProperty;
 var ae = Object.getOwnPropertyDescriptor;

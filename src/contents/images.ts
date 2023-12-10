@@ -1,12 +1,5 @@
 import type { PlasmoCSConfig } from "plasmo";
 
-<<<<<<< HEAD
-import DOMWatcher from "~lib/content/DomWatcher";
-import ImageFilter from "~lib/content/filters/ImageFilter";
-import loadImage from "~lib/content/loadImage";
-import type Request from "~lib/Request";
-import { IType } from "~lib/Request";
-=======
 // import { containerID, popupCardOffset, popupThumbID } from "~lib/constanst";
 // import ImageFilter from "~lib/content/filters/ImageFilter";
 // import TextFilter from "~lib/content/filters/TextFilter";
@@ -19,7 +12,6 @@ import { IType } from "~lib/Request";
 // import { getPageX, getPageY } from "~lib/user-event";
 
 type UserEventType = MouseEvent | TouchEvent | PointerEvent;
->>>>>>> sang
 
 export const config: PlasmoCSConfig = {
 	matches: ["https://www.google.com/*"],
