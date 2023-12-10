@@ -36,10 +36,11 @@
       {
         "resources": [
           "html/popup-word-container.html",
-          "assets/iconn.svg"
+          "assets/iconn.svg",
+          "assets/bad_words.json"
         ],
         "matches": [
-          "https://www.google.com/*"
+          "https://*/*"
         ]
       }
     ],
