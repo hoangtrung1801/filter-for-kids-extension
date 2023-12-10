@@ -1,7 +1,7 @@
 import type { PlasmoCSConfig } from "plasmo";
 
 export const config: PlasmoCSConfig = {
-	matches: ["https://*/*"],
+	matches: ["https://www.facebook.com/*","https://www.tiktok.com/*"]
 };
 
 
