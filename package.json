@@ -35,7 +35,7 @@
     "web_accessible_resources": [
       {
         "resources": [
-          "html/popup-word-container.html",
+          "assets/html/popup-word-container.html",
           "assets/iconn.svg",
           "assets/bad_words.json"
         ],
