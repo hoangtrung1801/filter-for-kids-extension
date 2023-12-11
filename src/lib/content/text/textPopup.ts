@@ -1,7 +1,7 @@
 import acronymDict from "assets/dict_acronym.json";
 import wordDict from "assets/word.json";
+import containerStyle from "data-text:~css/container.css";
 import iconUrl from "url:~assets/icon.jpg";
-import containerStyle from "data-text:~css/container.css"
 
 function searchAcronym(jsonData, selectedText) {
 	return jsonData[selectedText];
@@ -71,7 +71,7 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 	console.log(mousePos);
 	const resultContainer = document.createElement("div");
 	resultContainer.id = "result-popup";
-	fetch(chrome.runtime.getURL("/html/popup-word-container.html"))
+	fetch(chrome.runtime.getURL("assets/html/popup-word-container.html"))
 		.then((response) => response.text())
 		.then((htmlContent) => {
 			resultContainer.innerHTML = htmlContent;
@@ -121,12 +121,10 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 			const exampleSpan2Adj = resultContainer.querySelector(
 				"#adj #example-span2"
 			);
-			const synonymSpanAdj = resultContainer.querySelector(
-				"#adj #synonym-span"
-			);
-			const antonymSpanAdj = resultContainer.querySelector(
-				"#adj #antonym-span"
-			);
+			const synonymSpanAdj =
+				resultContainer.querySelector("#adj #synonym-span");
+			const antonymSpanAdj =
+				resultContainer.querySelector("#adj #antonym-span");
 			// if (
 			// 	typeof acronym === "undefined"
 			// ) {
@@ -225,7 +223,7 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 					detail[selectedText].adj[0].antonyms[0];
 			}
 		});
-	
+
 	resultContainer.style.background = "white";
 	resultContainer.style.color = "black";
 	resultContainer.style.fontSize = "15px";
