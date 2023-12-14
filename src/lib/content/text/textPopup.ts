@@ -1,4 +1,5 @@
 import acronymDict from "assets/dict_acronym.json";
+import hanvietDict from "assets/hanviet.json";
 import wordDict from "assets/word.json";
 import containerStyle from "data-text:~css/container.css";
 import iconUrl from "url:~assets/icon.jpg";
@@ -51,6 +52,7 @@ function popupIcon(event) {
 					mousePos,
 					selectedText,
 					wordDict,
+					hanvietDict,
 					searchAcronym(acronymDict, selectedText)
 				);
 			});
@@ -67,7 +69,7 @@ function getSelectedText(): string {
 	return selectedText;
 }
 
-function renderResult(mousePos, selectedText, detail, acronym) {
+function renderResult(mousePos, selectedText, detail, hanvietWord, acronym) {
 	console.log(mousePos);
 	const resultContainer = document.createElement("div");
 	resultContainer.id = "result-popup";
@@ -125,11 +127,12 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 				resultContainer.querySelector("#adj #synonym-span");
 			const antonymSpanAdj =
 				resultContainer.querySelector("#adj #antonym-span");
-			// if (
-			// 	typeof acronym === "undefined"
-			// ) {
-			// 	acronymDiv.style.display = "none";
-			// }
+			console.log(acronym);
+
+			if (typeof acronym === "undefined") {
+				acronymDiv.style.display = "none";
+				// console.log("none");
+			}
 			if (
 				typeof detail[selectedText] === "undefined" ||
 				(typeof detail[selectedText].noun[0].defination === "string" &&
@@ -154,11 +157,21 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 
 			if (acronymSpan) {
 				acronymSpan.textContent = acronym;
-				console.log(acronym);
 			}
 			if (wordSpan) {
 				wordSpan.textContent = selectedText;
 			}
+
+			//hanviet
+			const hanvietDiv = resultContainer.querySelector("#hanviet");
+			const hanvietSpan = resultContainer.querySelector("#hanviet #meaning");
+			if(hanvietWord.words.find(word => word.hanviet === selectedText)){
+				console.log(hanvietWord.words.find(word => word.hanviet === selectedText).meaning);
+				hanvietSpan.textContent=hanvietWord.words.find(word => word.hanviet === selectedText).meaning;
+				console.log("testhanviet");
+				
+			}
+
 			//noun
 			if (definationSpanNoun) {
 				definationSpanNoun.textContent =
@@ -222,6 +235,8 @@ function renderResult(mousePos, selectedText, detail, acronym) {
 				antonymSpanAdj.textContent =
 					detail[selectedText].adj[0].antonyms[0];
 			}
+			
+			
 		});
 
 	resultContainer.style.background = "white";
