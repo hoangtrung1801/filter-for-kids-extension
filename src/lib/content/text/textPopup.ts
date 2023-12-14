@@ -73,7 +73,7 @@ function renderResult(mousePos, selectedText, detail, hanvietWord, acronym) {
 	console.log(mousePos);
 	const resultContainer = document.createElement("div");
 	resultContainer.id = "result-popup";
-	fetch(chrome.runtime.getURL("assets/html/popup-word-container.html"))
+	fetch(chrome.runtime.getURL("assets/html/popup-word.html"))
 		.then((response) => response.text())
 		.then((htmlContent) => {
 			resultContainer.innerHTML = htmlContent;
@@ -167,9 +167,17 @@ function renderResult(mousePos, selectedText, detail, hanvietWord, acronym) {
 			const hanvietSpan = resultContainer.querySelector("#hanviet #meaning");
 			if(hanvietWord.words.find(word => word.hanviet === selectedText)){
 				console.log(hanvietWord.words.find(word => word.hanviet === selectedText).meaning);
-				hanvietSpan.textContent=hanvietWord.words.find(word => word.hanviet === selectedText).meaning;
-				console.log("testhanviet");
-				
+				if(hanvietSpan){
+					hanvietSpan.textContent=hanvietWord.words.find(word => word.hanviet === selectedText).meaning;
+				}
+				else{
+					console.log("dont have");
+					
+				}
+				console.log("testhanviet");				
+			}
+			else{
+				hanvietDiv.style.display = "none";
 			}
 
 			//noun
