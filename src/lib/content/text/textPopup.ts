@@ -168,7 +168,9 @@ function renderResult(mousePos, selectedText, detail, hanvietWord, acronym) {
 			if(hanvietWord.words.find(word => word.hanviet === selectedText)){
 				console.log(hanvietWord.words.find(word => word.hanviet === selectedText).meaning);
 				if(hanvietSpan){
-					hanvietSpan.textContent=hanvietWord.words.find(word => word.hanviet === selectedText).meaning;
+					let arrayMeaningSplit = hanvietWord.words.find(word => word.hanviet === selectedText).meaning.split("/");
+					let resultJoinMeaning = arrayMeaningSplit.join(", ");
+					hanvietSpan.textContent=resultJoinMeaning;
 				}
 				else{
 					console.log("dont have");
