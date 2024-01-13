@@ -4,7 +4,6 @@ export const config: PlasmoCSConfig = {
 	matches: ["https://www.facebook.com/*","https://www.tiktok.com/*"]
 };
 
-
 const badWordsUrl = chrome.runtime.getURL("assets/bad_words.json");
 console.log(badWordsUrl);
 
