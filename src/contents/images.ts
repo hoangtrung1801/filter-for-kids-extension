@@ -3,7 +3,7 @@ import type { PlasmoCSConfig } from "plasmo";
 import DOMWatcher from "~lib/content/DomWatcher";
 import ImageFilter from "~lib/content/filters/ImageFilter";
 import loadImage from "~lib/content/loadImage";
-import { initTextPopup } from "~lib/content/text/textPopup";
+import { initTextPopup } from "~lib/content/text/textPopupHandle";
 import type Request from "~lib/Request";
 import { IType } from "~lib/Request";
 
