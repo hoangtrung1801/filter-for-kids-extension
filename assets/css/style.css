@@ -1,4 +1,4 @@
-.container {
+.container-itv {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 25px;
@@ -6,176 +6,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     font-size: smaller;
+    background-color: white;
+    height: 500px;
+    width: 700px;
 }
-
-.border_shape {
-    position: relative;
-    /* width: 100%;
-display: flex;
-padding-left: 530px; */
-}
-
-.border_shape > img {
-    position: absolute;
-    top: -56px;
-    right: 150px;
-}
-
-.box {
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    width: 654px;
-    height: 100%;
-    border-radius: 35px;
-    border: 3px solid #ced9e3;
-    background: #fff;
-}
-
-.header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
-    border-bottom: 2px solid #cbc7c7;
-}
-
-.line {
-    width: 596px;
-    height: 0px;
-    left: 0.04px;
-    top: 40px;
-    position: absolute;
-    border: 1px #cbc7c7 solid;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.item {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.item-content {
-    color: #2e4051;
-    text-align: center;
-    font-family: Vazirmatn;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    opacity: 0.6;
-    padding-bottom: 8px;
-}
-
-.box-content {
-    display: flex;
-    /* position: relative; */
-    flex-direction: row;
-    height: 100%;
-    margin: 30px;
-    border-radius: 35px;
-    justify-content: center;
-    border: 3px solid #ced9e3;
-    background: #fff;
-}
-
-.box-gap {
-    width: 500px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* border: 3px solid #ced9e3; */
-    background: #fff;
-}
-/* #triangle_shape,
-#retangle_shape {
-position: absolute;
-top: 0;
-right: 0;
-z-index: 2;
-} */
-
-.lookup_word_container {
-    margin: 30px 20px 20px 30px;
+.header-itv{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 }
-
-#word-span {
-    color: #3074a5;
-    font-family: Merriweather;
+.word-itv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.word-itv span{
+    color: green;
+    background-color: gainsboro;
+    border-radius: 30px;
+    padding: 8px;
     font-size: 30px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 2px;
+    margin-right: 20px;
 }
-
-.pronounce_word {
+.voice-itv{
+    border-radius: 45px;
+    background: gainsboro;
+    padding: 8px;
+}
+.voice-itv img{
+    height: 30px;
+}
+.logo-itv{
+    border-radius: 30px;
+    background: gainsboro;
+    padding: 8px;
+    align-self: flex-end
+}
+.logo-itv img{
+    height: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.typeword-itv{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-bottom: 10px;
 }
-
-.pronounce_word > span {
-    padding: 0px 6px;
-    margin-left: 36px;
-    font-family: Habibi;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 2px;
+.typeword-itv div{
+    border-radius: 30px;
+    background: gainsboro;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 20px;
+    padding: 8px;
+    color: black;
 }
-
-.pos_word {
-    margin: 10px 30px;
-}
-
-.pos_word > span {
-    font-family: Merriweather;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 550;
-    line-height: 2px;
-}
-
-.explaination_word {
+.content-itv{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 34px;
-}
-
-.explaination_word > span {
-    margin-left: 8px;
-}
-
-.div_list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8px;
-}
-
-.div_list > span {
-    margin: 6px 0px 0px 20px;
-}
-
-#label {
-    font-weight: bold;
-}
-.type-word {
-    color: red;
+    border-radius: 30px;
+    background: gainsboro;
+    height: 400px;
+    width: 600px;
+    margin: 10px;
 }
