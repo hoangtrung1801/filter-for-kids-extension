@@ -5,12 +5,25 @@ import "assets/css/style.css"
 import iconVoice from "data-base64:assets/icon-voice.png"
 import logoITV from "data-base64:assets/logo-itv.png"
 import backgroundImg from "data-base64:assets/background.png"
+import { useState, useEffect } from "react";
 
 function searchAcronym(jsonData, selectedText) {
     return jsonData[selectedText];
 }
 
 export default function ResultPopup(props) {
+
+    const [typeWord, setTypeWord] = useState("n")
+
+    const handleNoun = () => {
+        setTypeWord("n");
+    }
+    const handleVerb = () => {
+        setTypeWord("v")
+    }
+    const handleAdj = () => {
+        setTypeWord("a")
+    }
     
     let acronym = searchAcronym(acronymDict,props.selectedText)
     let showAcronym = true;
@@ -27,7 +40,7 @@ export default function ResultPopup(props) {
         (typeof wordDict[props.selectedText].noun[0].defination === "string" &&
             wordDict[props.selectedText].noun[0].defination.length === 0)
     ) {
-        console.log("n");
+        console.log("dont have noun");
         showNounDiv = false;
     }
     if (
@@ -35,7 +48,7 @@ export default function ResultPopup(props) {
         (typeof wordDict[props.selectedText].verb[0].defination === "string" &&
             wordDict[props.selectedText].verb[0].defination.length === 0)
     ) {
-        console.log("v");
+        console.log("dont have verb");
         showVerbDiv = false;
     }
     if (
@@ -43,7 +56,7 @@ export default function ResultPopup(props) {
         (typeof wordDict[props.selectedText].adj[0].defination === "string" &&
             wordDict[props.selectedText].adj[0].defination.length === 0)
     ) {
-        console.log("a");
+        console.log("dont have adj");
         showAdjDiv = false;
         
     }
@@ -196,16 +209,25 @@ export default function ResultPopup(props) {
                     </div>
                 </div>
                 <div className="logo-itv">
+                    
                     <img src={logoITV} alt="Error img" />
                 </div>
             </div>
             <div className="typeword-itv">
-                <div>Danh Từ</div>
-                <div>Động Từ</div>
-                <div>Tính Từ</div>
+                <div onClick={handleNoun}>Danh Từ</div>
+                <div onClick={handleVerb}>Động Từ</div>
+                <div onClick={handleAdj}>Tính Từ</div>
             </div>
             <div className="content-itv">
-
+                <div className="content-text-itv">
+                    <div className="word-explain">{typeWord}</div>
+                    <div className="word-example">vd</div>
+                    <div className="syntonym">dn</div>
+                    <div className="antonym">tn</div>
+                </div>
+                <div className="content-img-itv">
+                    <img style={{ width:"250px" }} src={wordDict[props.selectedText].img[0].url} alt="" />
+                </div>
             </div>
         </div>
     );

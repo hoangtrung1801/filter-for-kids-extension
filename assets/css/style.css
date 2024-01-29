@@ -5,21 +5,22 @@
     z-index: 999;
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-size: smaller;
     background-color: white;
-    height: 500px;
+    height: 550px;
     width: 700px;
 }
 .header-itv{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-end;
 }
 .word-itv{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 20px;
 }
 .word-itv span{
     color: green;
@@ -28,6 +29,7 @@
     padding: 8px;
     font-size: 30px;
     margin-right: 20px;
+    align-self: self-start;
 }
 .voice-itv{
     border-radius: 45px;
@@ -41,7 +43,11 @@
     border-radius: 30px;
     background: gainsboro;
     padding: 8px;
-    align-self: flex-end
+    align-self: flex-end;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 .logo-itv img{
     height: 60px;
@@ -51,7 +57,7 @@
 .typeword-itv{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-self: center;
 }
 .typeword-itv div{
     border-radius: 30px;
@@ -60,13 +66,47 @@
     margin-right: 50px;
     font-size: 20px;
     padding: 8px;
-    color: black;
+    color: green;
 }
+.typeword-itv div:hover {
+    background-color: gray;
+    cursor: pointer;
+  }
 .content-itv{
     display: flex;
+    flex-direction: row;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
     border-radius: 30px;
     background: gainsboro;
     height: 400px;
     width: 600px;
     margin: 10px;
+}
+.content-text-itv{
+    height: 330px;
+    width: 270px;
+    margin-right: 10px;
+}
+.content-text-itv div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(133, 245, 142);
+    border-radius: 30px;
+    font-size: 20px;
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: green;
+}
+.content-img-itv{
+    background-color: gray;
+    border-radius: 30px;
+    height: 330px;
+    width: 270px;
+    margin-left: 10px;
+    align-items: center;
+    justify-content: center;
 }
