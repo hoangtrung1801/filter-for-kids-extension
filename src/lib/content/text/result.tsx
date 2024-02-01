@@ -19,7 +19,7 @@ export default function ResultPopup(props) {
             wordDict[props.selectedText].noun[0].defination.length === 0))
     ) {
         console.log("dont have noun");
-        contentText = [wordDict[props.selectedText].noun[0].defination];
+        contentText = [wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url];
     }
     else if (
         !(typeof wordDict[props.selectedText] === "undefined" ||
@@ -27,7 +27,7 @@ export default function ResultPopup(props) {
             wordDict[props.selectedText].verb[0].defination.length === 0))
     ) {
         console.log("dont have verb");
-        contentText = [wordDict[props.selectedText].verb[0].defination];
+        contentText = [wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url];
     }
     else if (
         !(typeof wordDict[props.selectedText] === "undefined" ||
@@ -35,7 +35,7 @@ export default function ResultPopup(props) {
             wordDict[props.selectedText].adj[0].defination.length === 0))
     ) {
         console.log("dont have adj");
-        contentText = [wordDict[props.selectedText].adj[0].defination];
+        contentText = [wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url];
         
     }
     if(!hanviet.words.find(word => word.hanviet === props.selectedText)){
@@ -44,13 +44,13 @@ export default function ResultPopup(props) {
     const [typeWord, setTypeWord] = useState(contentText)
 
     const handleNoun = () => {
-        setTypeWord([wordDict[props.selectedText].noun[0].defination]);
+        setTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url]);
     }
     const handleVerb = () => {
-        setTypeWord([wordDict[props.selectedText].verb[0].defination])
+        setTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url])
     }
     const handleAdj = () => {
-        setTypeWord([wordDict[props.selectedText].adj[0].defination])
+        setTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url])
     }
     
     let acronym = searchAcronym(acronymDict,props.selectedText)
@@ -86,12 +86,12 @@ export default function ResultPopup(props) {
             <div className="content-itv">
                 <div className="content-text-itv">
                     <div className="word-explain">{typeWord[0]}</div>
-                    <div className="word-example">vd</div>
-                    <div className="syntonym">dn</div>
-                    <div className="antonym">tn</div>
+                    <div className="word-example"><span>Ví dụ:</span>{typeWord[1]}</div>
+                    <div className="syntonym"><span>Đồng nghĩa:</span>{typeWord[2]}</div>
+                    <div className="antonym"><span>Trái nghĩa</span>{typeWord[3]}</div>
                 </div>
                 <div className="content-img-itv">
-                    <img style={{ width:"250px" }} src={wordDict[props.selectedText].img[0].url} alt="" />
+                    <img style={{ width:"250px" }} src={typeWord[4]} alt="" />
                 </div>
             </div>
         </div>

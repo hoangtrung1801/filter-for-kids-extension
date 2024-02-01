@@ -70,7 +70,7 @@
 }
 .typeword-itv div:hover {
     background-color: #2a870f;
-    color: white;
+    color: #8cf748;
     cursor: pointer;
   }
 .content-itv{
@@ -97,13 +97,25 @@
     align-items: center;
     background-color: rgb(133, 245, 142);
     border-radius: 30px;
-    font-size: 20px;
-    height: 70px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 15px;
+    margin-bottom: 6px;
     color: #1bad17;
+    padding: 10px;
+}
+.word-explain{
+    height: 80px;
+}
+.word-example{
+    height: 80px;
+}
+.syntonym{
+    height: 30px;
+}
+.antonym{
+    height: 30px;
 }
 .content-img-itv{
+    display: flex;
     background-color: gray;
     border-radius: 30px;
     height: 330px;
