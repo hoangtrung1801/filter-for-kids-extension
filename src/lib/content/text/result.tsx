@@ -13,6 +13,7 @@ function searchAcronym(jsonData, selectedText) {
 
 export default function ResultPopup(props) {
     let contentText = [];
+
     if (
         !(typeof wordDict[props.selectedText] === "undefined" ||
         (typeof wordDict[props.selectedText].noun[0].defination === "string" &&
@@ -85,10 +86,10 @@ export default function ResultPopup(props) {
             </div>
             <div className="content-itv">
                 <div className="content-text-itv">
-                    <div className="word-explain">{typeWord[0]}</div>
-                    <div className="word-example"><span>Ví dụ:</span>{typeWord[1]}</div>
-                    <div className="syntonym"><span>Đồng nghĩa:</span>{typeWord[2]}</div>
-                    <div className="antonym"><span>Trái nghĩa</span>{typeWord[3]}</div>
+                    <div className="word-explain"><span>Mô tả</span>{typeWord[0]}</div>
+                    <div className="word-example"><span>Ví dụ:</span>{typeWord[1].join(", ")}</div>
+                    <div className="syntonym"><span>Đồng nghĩa:</span>{typeWord[2].join(", ")}</div>
+                    <div className="antonym"><span>Trái nghĩa</span>{typeWord[3].join(", ")}</div>
                 </div>
                 <div className="content-img-itv">
                     <img style={{ width:"250px" }} src={typeWord[4]} alt="" />
