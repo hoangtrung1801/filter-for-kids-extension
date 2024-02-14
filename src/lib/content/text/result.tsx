@@ -14,6 +14,28 @@ function searchAcronym(jsonData, selectedText) {
 export default function ResultPopup(props) {
     let contentText = [];
 
+    let acronym = searchAcronym(acronymDict,props.selectedText)
+    let showAcronym;
+    let showSinoViet;
+    let showWord;
+    let hanvietWord;
+    if (!(typeof acronym === "undefined")) {
+        showAcronym = true;
+        showWord = false;
+        showSinoViet= false;
+    }
+    else if(hanviet.words.find(word => word.hanviet === props.selectedText)){
+        showAcronym = false;
+        showWord = false;
+        showSinoViet= true;
+        hanvietWord = hanviet.words.find(word => word.hanviet === props.selectedText).meaning.split("/").join(", ")	
+    }
+    else{
+        showAcronym = false;
+        showWord = true;
+        showSinoViet= false;
+    }
+
     if (
         !(typeof wordDict[props.selectedText] === "undefined" ||
         (typeof wordDict[props.selectedText].noun[0].defination === "string" &&
@@ -39,9 +61,7 @@ export default function ResultPopup(props) {
         contentText = [wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url];
         
     }
-    if(!hanviet.words.find(word => word.hanviet === props.selectedText)){
-        // showSinoViet = false;		
-    }
+    
     const [typeWord, setTypeWord] = useState(contentText)
 
     const handleNoun = () => {
@@ -54,15 +74,7 @@ export default function ResultPopup(props) {
         setTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url])
     }
     
-    let acronym = searchAcronym(acronymDict,props.selectedText)
-    let showAcronym = true;
-    let showSinoViet = true
-    let showNounDiv = true;
-    let showVerbDiv = true;
-    let showAdjDiv = true;
-    if (typeof acronym === "undefined") {
-        showAcronym = false;
-    }
+   
     
 
     return (
@@ -79,11 +91,14 @@ export default function ResultPopup(props) {
                     <img src={logoITV} alt="Error img" />
                 </div>
             </div>
+            {showWord &&(
             <div className="typeword-itv">
                 <div onClick={handleNoun}>Danh Từ</div>
                 <div onClick={handleVerb}>Động Từ</div>
                 <div onClick={handleAdj}>Tính Từ</div>
             </div>
+            )}
+            {showWord &&(
             <div className="content-itv">
                 <div className="content-text-itv">
                     <div className="word-explain"><span>Mô tả</span>{typeWord[0]}</div>
@@ -95,6 +110,13 @@ export default function ResultPopup(props) {
                     <img style={{ width:"250px" }} src={typeWord[4]} alt="" />
                 </div>
             </div>
+            )}
+            {showAcronym &&(
+            <div className="acronym-itv">{acronym}</div>
+            )}
+            {showSinoViet &&(
+            <div className="sinoword-itv">{hanvietWord}</div>
+            )}
         </div>
     );
 }
