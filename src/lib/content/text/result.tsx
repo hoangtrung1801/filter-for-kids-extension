@@ -111,11 +111,17 @@ export default function ResultPopup(props) {
                 </div>
             </div>
             )}
-            {showAcronym &&(
-            <div className="acronym-itv">{acronym}</div>
+            {showAcronym &&(            
+            <div className="acronym-itv">
+                <div>Từ Viết Tắt</div>
+                <div>{acronym}</div>
+            </div>
             )}
             {showSinoViet &&(
-            <div className="sinoword-itv">{hanvietWord}</div>
+            <div className="sinoword-itv">
+                <div>Từ Hán Việt</div>
+                <div>{hanvietWord}</div>
+            </div>
             )}
         </div>
     );
