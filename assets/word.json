@@ -4643,5 +4643,661 @@
                 "title": ""
             }
         ]
+    },
+    "khả dĩ": {
+        "noun": [
+            {
+                "defination": [
+                    "Có nghĩa là có thể xảy ra hoặc thực hiện được, tương tự như khả năng hoặc tính khả thi của một việc gì đó"
+                ],
+                "example": [
+                    "Khả dĩ việc này sẽ không thể thực hiện được"
+                ],
+                "synonyms": [
+                    "khả thi",
+                    "có thể",
+                    "đáng lẽ",
+                    "lẽ ra"
+                ],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "hiện tại": {
+        "noun": [
+            {
+                "defination": [
+                    "Là một điểm thời gian hoặc một khoảng thời gian đang diễn ra ngay trong lúc nói chuyện hoặc trong một thời gian gần đây"
+                ],
+                "example": [
+                    "Bây giờ là khoảng thời gian vô cùng nhạy cảm và quan trọng, chúng ta cần phải tập trung vào hiện tại để đạt được mục tiêu của mình"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "vấn đề": {
+        "noun": [
+            {
+                "defination": [
+                    "Là một tình huống hoặc vấn đề cần được giải quyết hoặc xử lý, thường gây khó khăn hoặc lo lắng cho người khác"
+                ],
+                "example": [
+                    "Vấn đề này cần phải được giải quyết ngay lập tức"
+                ],
+                "synonyms": [
+                    "thách thức",
+                    "rắc rối",
+                    "khó khăn"
+                ],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "đại gia": {
+        "noun": [
+            {
+                "defination": [
+                    "Thường được sử dụng để chỉ những người giàu có, thường là chủ doanh nghiệp hoặc doanh nhân thành đạt"
+                ],
+                "example": [
+                    "Ông ấy là một đại gia trong ngành công nghiệp sản xuất ô tô"
+                ],
+                "synonyms": [
+                    "phú nhị đại",
+                    "triệu phú",
+                    "tỷ phú"
+                ],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "phi thường": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "Có nghĩa là vượt xa khỏi sự thông thường, ngoại dự kiến, hoặc không thể tin được",
+                "example": [
+                    "Cậu ấy có một nghị lực phi thường"
+                ],
+                "synonyms": [
+                    "phi phàm",
+                    "xuất thần",
+                    "xuất chúng"
+                ],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "phát hiện": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Là hành động tìm ra hoặc khám phá điều gì đó mới, thường là một thông tin quan trọng hoặc ý kiến",
+                "example": [
+                    "Đội khảo cổ đã phát hiện ra một ngôi mộ cổ ở vùng núi cao"
+                ],
+                "synonyms": [
+                    "tìm thấy",
+                    "khám phá"
+                ],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "nhất định": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "Thường được sử dụng để chỉ sự chắc chắn hoặc quyết định mạnh mẽ về một điều gì đó. Từ này thường đi kèm với ý nghĩa rằng không có sự nghi ngờ hoặc sự chắc chắn về điều được nói",
+                "example": [
+                    "Tôi nhất định sẽ đến đón bạn vào lúc 7 giờ tối"
+                ],
+                "synonyms": [
+                    "chắc chắn",
+                    "nhất quyết",
+                    "bảo đảm"
+                ],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "tiến hành": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Đề cập đến việc bắt đầu hoặc thực hiện một nhiệm vụ, công việc, hoạt động nào đó. Thường được sử dụng để mô tả việc thực hiện một kế hoạch, một công việc hoặc một quy trình nào đó để đạt được một mục tiêu cụ thể",
+                "example": [
+                    "Trước khi tiến hành một dự án, chúng ta cần phải lên kế hoạch cẩn thận"
+                ],
+                "synonyms": [
+                    "thực hiện",
+                    "bắt đầu",
+                    "làm",
+                    "triển khai"
+                ],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "bằng hữu": {
+        "noun": [
+            {
+                "defination": "Thường được sử dụng để chỉ những người bạn thân thiết, đồng lòng và tin tưởng lẫn nhau. Đây là một thuật ngữ thường được sử dụng trong các mối quan hệ xã hội để chỉ mức độ thân thiết và gắn kết giữa các cá nhân",
+                "example": [
+                    "Anh ấy là một người bằng hữu đáng tin cậy"
+                ],
+                "synonyms": [
+                    "bạn",
+                    "bạn bè",
+                    "đồng đội"
+                ],
+                "antonyms": [
+                    "kẻ thù",
+                    "đối thủ"
+                ]
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "sở hữu": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Đề cập đến việc sở hữu hoặc có quyền kiểm soát, quản lý một tài sản, một vật phẩm hoặc một ý tưởng. Đây là quyền lợi hoặc trách nhiệm của người nắm giữ đối với một cái gì đó",
+                "example": [
+                    "Chủ nhân của ngôi nhà này đã sở hữu nó từ nhiều năm trước"
+                ],
+                "synonyms": [
+                    "chiếm hữu",
+                    "quản lý",
+                    "nắm giữ"
+                ],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "học tập": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "đề cập đến quá trình học hỏi và tiếp thu kiến thức, kỹ năng từ các nguồn khác nhau như sách vở, giáo viên, trường học hoặc trải nghiệm cá nhân. Học tập không chỉ giúp cá nhân tiếp cận kiến thức mới mà còn phát triển kỹ năng và sự hiểu biết về thế giới xung quanh",
+                "example": [
+                    "Học tập là một quá trình không bao giờ kết thúc"
+                ],
+                "synonyms": [
+                    "học hỏi",
+                    "nghiên cứu",
+                    "tìm hiểu"
+                ],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "đương thời": {
+        "noun": [
+            {
+                "defination": "Thường được sử dụng để chỉ thời điểm hoặc thời kỳ hiện tại, đồng thời cũng có thể ám chỉ sự hiện đại hoặc sự thịnh hành của một ý tưởng, phong trào, hoặc xu hướng",
+                "example": [
+                    "Đương thời, chúng ta cần phải tập trung vào việc giải quyết vấn đề liên quan đến môi trường"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "quá khứ": {
+        "noun": [
+            {
+                "defination": "Đề cập đến thời gian hoặc sự kiện đã xảy ra trước thời điểm hiện tại. Đây là phần của quãng thời gian đã trôi qua và không còn tồn tại trong hiện tại",
+                "example": [
+                    "Trong quá khứ của mình, ông ấy đã trải qua nhiều khó khăn và thử thách"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "văn hóa": {
+        "noun": [
+            {
+                "defination": "Đề cập đến tập hợp các giá trị, niềm tin, thói quen, nghệ thuật, và lối sống của một nhóm người hoặc một cộng đồng cụ thể. Văn hóa thường phản ánh các phẩm chất đặc trưng của một nhóm và thường được thể hiện qua ngôn ngữ, truyền thống, và hành vi",
+                "example": [
+                    "Một trong những nét đặc trưng của văn hóa Việt Nam là sự hiếu khách và lòng hiếu thảo"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "đương nhiên": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "Thường được sử dụng để biểu thị sự hiển nhiên hoặc hiển nhiên của một điều gì đó, cho thấy điều đó là dễ hiểu hoặc không cần phải giải thích thêm",
+                "example": [
+                    "Tôi đương nhiên sẽ giúp bạn nếu bạn cần"
+                ],
+                "synonyms": [
+                    "hiển nhiên",
+                    "rõ ràng",
+                    "tất nhiên"
+                ],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
     }
 }
