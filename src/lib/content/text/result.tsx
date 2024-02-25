@@ -12,6 +12,10 @@ function searchAcronym(jsonData, selectedText) {
 }
 
 export default function ResultPopup(props) {
+
+    const [selectedButton, setSelectedButton] = useState(null);
+
+
     let contentText = [];
 
     let acronym = searchAcronym(acronymDict,props.selectedText)
@@ -41,7 +45,7 @@ export default function ResultPopup(props) {
         (typeof wordDict[props.selectedText].noun[0].defination === "string" &&
             wordDict[props.selectedText].noun[0].defination.length === 0))
     ) {
-        console.log("dont have noun");
+        console.log("have noun");
         contentText = [wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url];
     }
     else if (
@@ -49,7 +53,7 @@ export default function ResultPopup(props) {
         (typeof wordDict[props.selectedText].verb[0].defination === "string" &&
             wordDict[props.selectedText].verb[0].defination.length === 0))
     ) {
-        console.log("dont have verb");
+        console.log("have verb");
         contentText = [wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url];
     }
     else if (
@@ -57,23 +61,29 @@ export default function ResultPopup(props) {
         (typeof wordDict[props.selectedText].adj[0].defination === "string" &&
             wordDict[props.selectedText].adj[0].defination.length === 0))
     ) {
-        console.log("dont have adj");
+        console.log("have adj");
         contentText = [wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url];
         
     }
     
     const [typeWord, setTypeWord] = useState(contentText)
 
-    const handleNoun = () => {
-        setTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url]);
+    // const handleNoun = (type) => {
+    //     setTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url]);
+    //     setSelectedButton(type === selectedButton ? null : type);
+    // }
+    // const handleVerb = (type) => {
+    //     setTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url])
+    //     setSelectedButton(type === selectedButton ? null : type);
+    // }
+    // const handleAdj = (type) => {
+    //     setTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url])
+    //     setSelectedButton(type === selectedButton ? null : type);
+    // }
+    const handleTypeWord = (in4,type) => {
+        setTypeWord(in4);
+        setSelectedButton(type);
     }
-    const handleVerb = () => {
-        setTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url])
-    }
-    const handleAdj = () => {
-        setTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url])
-    }
-    
    
     
 
@@ -93,9 +103,9 @@ export default function ResultPopup(props) {
             </div>
             {showWord &&(
             <div className="typeword-itv">
-                <div onClick={handleNoun}>Danh Từ</div>
-                <div onClick={handleVerb}>Động Từ</div>
-                <div onClick={handleAdj}>Tính Từ</div>
+                <div className={selectedButton === "noun" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={()=>handleTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url],"noun")}>Danh Từ</div>
+                <div className={selectedButton === "verb" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={()=>handleTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url],"verb")}>Động Từ</div>
+                <div className={selectedButton === "adj" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={()=>handleTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url],"adj")}>Tính Từ</div>
             </div>
             )}
             {showWord &&(

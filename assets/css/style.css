@@ -59,7 +59,16 @@
     flex-direction: row;
     align-self: center;
 }
-.typeword-itv div{
+.typeword-button-selected-itv {
+    background-color: #2a870f;
+    color: #8cf748;
+    border-radius: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 20px;
+    padding: 8px;
+}
+.typeword-button-itv{
     border-radius: 30px;
     background: gainsboro;
     margin-left: 50px;
@@ -68,11 +77,14 @@
     padding: 8px;
     color: #1bad17;
 }
-.typeword-itv div:hover {
+.typeword-button-itv:hover {
     background-color: #2a870f;
     color: #8cf748;
     cursor: pointer;
-  }
+}
+
+
+
 .content-itv{
     display: flex;
     flex-direction: row;

@@ -67,7 +67,7 @@
         ],
         "verb": [
             {
-                "defination": "mô tả",
+                "defination": "test verb",
                 "example": [
                     "ngôi nhà này to lớn quá",
                     "nhà của tôi ở huyện kế bên"
@@ -82,7 +82,7 @@
         ],
         "adj": [
             {
-                "defination": "mô tả",
+                "defination": "Test adj",
                 "example": [
                     "ngôi nhà này to lớn quá",
                     "nhà của tôi ở huyện kế bên"
