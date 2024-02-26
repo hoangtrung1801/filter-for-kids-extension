@@ -15,7 +15,6 @@ export default function ResultPopup(props) {
 
     const [selectedButton, setSelectedButton] = useState(null);
 
-
     let contentText = [];
 
     let acronym = searchAcronym(acronymDict,props.selectedText)
@@ -68,27 +67,14 @@ export default function ResultPopup(props) {
     
     const [typeWord, setTypeWord] = useState(contentText)
 
-    // const handleNoun = (type) => {
-    //     setTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url]);
-    //     setSelectedButton(type === selectedButton ? null : type);
-    // }
-    // const handleVerb = (type) => {
-    //     setTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url])
-    //     setSelectedButton(type === selectedButton ? null : type);
-    // }
-    // const handleAdj = (type) => {
-    //     setTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url])
-    //     setSelectedButton(type === selectedButton ? null : type);
-    // }
     const handleTypeWord = (in4,type) => {
         setTypeWord(in4);
         setSelectedButton(type);
     }
    
-    
 
     return (
-        <div id="result" style={{position: "absolute",top: props.mousePos.y, left: props.mousePos.x }} className="container-itv">
+        <div id="result" style={{position: "absolute",top: props.mousePos.y, left: props.mousePos.x, backgroundImage: `url(${backgroundImg})`}} className="container-itv">
             <div className="header-itv">
                 <div className="word-itv">
                     <span>{props.selectedText}</span>
