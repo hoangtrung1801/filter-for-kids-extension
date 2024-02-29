@@ -67,8 +67,11 @@
         ],
         "verb": [
             {
-                "defination": "",
-                "example": [],
+                "defination": "test verb",
+                "example": [
+                    "ngôi nhà này to lớn quá",
+                    "nhà của tôi ở huyện kế bên"
+                ],
                 "synonyms": [
                     ""
                 ],
@@ -79,9 +82,10 @@
         ],
         "adj": [
             {
-                "defination": "",
+                "defination": "Test adj",
                 "example": [
-    
+                    "ngôi nhà này to lớn quá",
+                    "nhà của tôi ở huyện kế bên"
                 ],
                 "synonyms": [
                     ""
@@ -93,7 +97,7 @@
         ],
         "img": [
             {
-                "url": "https://www.bing.com/images/create/a-house-in-a-variety-of-landscapes/654cb15bc27347f4b7f1c5a703e94de5?id=31xT8Q%2f3ZcXwg9czuatLYg%3d%3d&view=detailv2&idpp=genimg&idpclose=1&FORM=SYDBIC",
+                "url": "https://drive.google.com/uc?id=1A5O5iqHlzV47nTcrXLWbqDYH3l-cRDqU",
                 "title": "Ngôi nhà"
             }
         ],
@@ -143,7 +147,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1YVnTPSciXJvZHmwWm2tOnj_Njzq4QZiL",
                 "title": ""
             }
         ],
@@ -243,7 +247,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1jSEL43MibAUt9PoMOeKy6MDXKBJf6CjM",
                 "title": ""
             }
         ],
@@ -293,7 +297,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1FbdWcHB2Wb0O43pBeUA6Xjv4pogEx1wN",
                 "title": ""
             }
         ],
@@ -452,7 +456,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=108DoPLQw24vRP9AshXcDloLwLwHJUjpw",
                 "title": ""
             }
         ],
@@ -506,7 +510,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1ueFI0i2LVtqWqcv0_43-RGYFK7pu-VsZ",
                 "title": ""
             }
         ],
@@ -558,7 +562,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1RXvfojAJWvRm2Q_4eUA8Sb0mW5VkuF1E",
                 "title": ""
             }
         ],
@@ -610,7 +614,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1GgCg_e8yq-abUfu5mukrQAmLF35XMH-m",
                 "title": ""
             }
         ],
@@ -661,7 +665,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1FqJrkwAb1t_5A-J0vv9WFDydP_Rf_dyO",
                 "title": ""
             }
         ],
@@ -711,7 +715,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1UeUFsPHwDDDvailOUuDiT2wpvz1xjiC2",
                 "title": ""
             }
         ],
@@ -762,7 +766,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=16bL40FpyPoTLPtSB4j4f7a9-64Ce9jvv",
                 "title": ""
             }
         ],
@@ -813,7 +817,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1bWvR97LNs_xJ6_BiSrDnfCSEGsEWQ_Vy",
                 "title": ""
             }
         ],
@@ -867,7 +871,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1hJOxQ3QGiKoJ0gKnWFotXUwA_b2fSJuX",
                 "title": ""
             }
         ],
@@ -922,7 +926,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1p3QV5mjTfXV1XLTFfPrp-9TpdCISea7U",
                 "title": ""
             }
         ],
@@ -974,7 +978,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=17FWo-3N8nzvcEq_Q-BhjNs1aARq3w0nZ",
                 "title": ""
             }
         ],
@@ -1028,7 +1032,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1ZCqfMjUWuR57_pvKDRsPsZ1_qWHx-dW1",
                 "title": ""
             }
         ],
@@ -1084,7 +1088,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1Hux2ayOk7yPUhhPtYGjrdlH_fNmWf0Sy",
                 "title": ""
             }
         ],
@@ -1140,7 +1144,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1DTNcW_UF9B0YE1-M2Dq5xLhVTV8MHnX_",
                 "title": ""
             }
         ],
@@ -1191,7 +1195,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1QFcW0apBiHglbjCq-uS41_2Z6CoE37K9",
                 "title": ""
             }
         ],
@@ -1326,7 +1330,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1uQpnIa84S4YjvaEsmispZi3--W7Tb8Al",
                 "title": ""
             }
         ],
@@ -1370,7 +1374,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=195xhuYY37E7w9VAhFlL551fDucSeYyKz",
                 "title": ""
             }
         ],
@@ -1495,7 +1499,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1_jThlF2qx4VpTGF_UUslUe0ikBnN_SMh",
                 "title": ""
             }
         ],
@@ -1577,7 +1581,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1hVypX1_A2UTfsGk195BW3dubXSa7F3Yu",
                 "title": ""
             }
         ],
@@ -1701,7 +1705,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1fehha6z3e3cNJMQar5RJLGPfpuwoCdQS",
                 "title": ""
             }
         ],
@@ -1744,7 +1748,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1wU2J67t48EnlJkjfkC0Kp9cC0H_SEYWE",
                 "title": ""
             }
         ],
@@ -1785,7 +1789,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=19BSqIGFIN9ZM0WTNQA-gg730nIXKRbBZ",
                 "title": ""
             }
         ],
@@ -1828,7 +1832,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1J0Vrq5LgakQRFbboLtYMBgPK34IIA2OL",
                 "title": ""
             }
         ],
@@ -1913,7 +1917,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1zDysOUsxDTf87IVMnlFRIYHtYp4sGJ3w",
                 "title": ""
             }
         ],
@@ -1954,7 +1958,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1pYluvKHO9AA4s1WT6fpTnrfqaR-whrF4",
                 "title": ""
             }
         ],
@@ -1997,7 +2001,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1LD_zQ-4CsoI_S5l9kHR5PSVCLG2Z5Mov",
                 "title": ""
             }
         ],
@@ -2041,7 +2045,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1FNQamiHJI-qWaLweeGcv2GxLug3FYIev",
                 "title": ""
             }
         ],
@@ -2084,7 +2088,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1QGzGGTyE8ged4sXbKpV13A5FwOUvVyX5",
                 "title": ""
             }
         ],
@@ -2166,7 +2170,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1B0yHY2dBvoV6GhT8zcJyXmeKodj4LKlU",
                 "title": ""
             }
         ],
@@ -2210,7 +2214,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1jIcwFE4CZHqZFXWL60XfG-zqV6Qvb5JS",
                 "title": ""
             }
         ],
@@ -2295,7 +2299,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1EWCsUDXRG8GAsykyRo1VaZ3HVZ6lECUE",
                 "title": ""
             }
         ],
@@ -2336,7 +2340,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1V-VuwBvylgH8CnjAF5qWA7ioWRBNVg8e",
                 "title": ""
             }
         ],
@@ -2377,7 +2381,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1wlatV5BuKe8uPWxArgiDT0JP5anvbimP",
                 "title": ""
             }
         ],
@@ -2418,7 +2422,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=17BHKykA3Lta1LsbEWfH5-b0REy7vM5Tx",
                 "title": ""
             }
         ],
@@ -2461,7 +2465,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=17BHKykA3Lta1LsbEWfH5-b0REy7vM5Tx",
                 "title": ""
             }
         ],
@@ -2501,7 +2505,7 @@
         ],
         "img": [
             {
-                "url": "",
+                "url": "https://drive.google.com/uc?id=1ofu-wYn7zAhCIkWr9rQQdNTmJJ24CMp2",
                 "title": ""
             }
         ],
@@ -4004,6 +4008,682 @@
         "img": [
             {
                 "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "tổ chức": {
+        "noun": [
+            {
+                "defination": "Có thể đề cập đến một đơn vị, tập thể, hoặc cơ sở có cơ cấu để thực hiện các hoạt động cụ thể, định hình cấu trúc và quy trình nội bộ để đạt được mục tiêu cụ thể",
+                "example": [
+                    "Tổ chức thiện nguyện Sài Gòn xanh",
+                    "Tổ chức phi lợi nhuận"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Sắp xếp, bố trí cho thành một chỉnh thể, có một cấu tạo, một cấu trúc và những chức năng chung nhất định",
+                "example": [
+                    "Tổ chức lại đội ngũ cán bộ",
+                    "Tổ chức sinh nhật cho bạn"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "thực hiện": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Làm cho trở thành sự thật bằng những việc làm hoặc hành động cụ thể",
+                "example": [
+                    "Thực hiện phương án tuyển sinh",
+                    "Thực hiện kế hoạch đầu tư và phát triển thành phố"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "công ty": {
+        "noun": [
+            {
+                "defination": "Tổ chức kinh doanh do nhiều thành viên cùng góp vốn, cùng chia lợi nhuận hoặc cùng chịu lỗ, tương ứng với phần vốn góp",
+                "example": [
+                    "Thành lập công ty",
+                    "Công ty TNHH MTV"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "đầu tư": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Bỏ nhân lực, vật lực, tài lực vào công việc gì sao cho có hiệu quả kinh tế, xã hội",
+                "example": [
+                    "Chính sách đầu tư hợp lí",
+                    "Đầu tư nhiều công sức vào việc học tập"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "kinh doanh": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Tổ chức việc sản xuất, buôn bán, dịch vụ nhằm mục đích sinh lợi",
+                "example": [
+                    "Kinh doanh bất động sản",
+                    "Có đầu óc kinh doanh nhạy bén"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "lợi nhuận": {
+        "noun": [
+            {
+                "defination": "Khoản tiền chênh lệch do thu nhập vượt chi phí sau một quá trình sản xuất, kinh doanh (thường nói về những tổ chức kinh doanh lớn)",
+                "example": [
+                    "Doanh nghiệp này đã đạt được lợi nhuận đáng kể trong năm tài chính vừa qua nhờ vào chiến lược quảng cáo hiệu quả",
+                    "Lợi nhuận sau thuế"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "thành phố": {
+        "noun": [
+            {
+                "defination": "Là một đơn vị hành chính lớn, thường là trung tâm của kinh tế, văn hóa và chính trị trong một khu vực hoặc quốc gia, thường có dân số đông đúc và cấp độ phát triển cao",
+                "example": [
+                    "Thành phố Đà Nẵng",
+                    "Thành phố biển xinh đẹp nhất Việt Nam"
+                ],
+                "synonyms": [
+                    "thành thị",
+                    "đô thị"
+                ],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "bãi biển": {
+        "noun": [
+            {
+                "defination": "Là một dải đất ven biển, thường có cát, đá hoặc nguyên liệu tự nhiên khác, nằm giữa khu vực đất liền và biển, thường được sử dụng để tắm, giải trí và các hoạt động ngoại ô",
+                "example": [
+                    "Bãi biển Mỹ Khê Đà Nẵng",
+                    "Lễ hội bãi biển Nha Trang"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "gia đình": {
+        "noun": [
+            {
+                "defination": "Là một nhóm người sống chung trong một mái ấm, thường bao gồm cha mẹ và con cái, nhưng cũng có thể bao gồm các thành viên khác như ông bà, anh chị em, hoặc người nuôi dưỡng",
+                "example": [
+                    "Gia đình là nơi mọi người chia sẻ yêu thương, hỗ trợ và tạo nên một môi trường ổn định cho mỗi thành viên",
+                    "Gia đình là nơi mà mỗi người có thể trở về sau một ngày làm việc mệt mỏi"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "thông tin": {
+        "noun": [
+            {
+                "defination": "Là dữ liệu hoặc sự biến đổi của dữ liệu mà người ta có thể sử dụng để hiểu, học hỏi, và đưa ra quyết định. Thông tin thường được truyền đạt qua các phương tiện truyền thông và có thể liên quan đến nhiều lĩnh vực như khoa học, kinh tế, xã hội",
+                "example": [
+                    "Internet là nguồn thông tin lớn giúp mọi người nắm bắt thông tin từ khắp nơi trên thế giới",
+                    "Chúng ta cần phải biết cách chọn lọc và nhận biết những thông tin trên không gian mạng"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "doanh nghiệp": {
+        "noun": [
+            {
+                "defination": "Là một tổ chức hoặc cá nhân tham gia vào các hoạt động kinh doanh nhằm mục đích tạo ra lợi nhuận. Doanh nghiệp có thể hoạt động trong nhiều lĩnh vực và có thể có quy mô từ nhỏ đến lớn",
+                "example": [
+                    "Doanh nghiệp này đã đạt được lợi nhuận đáng kể trong năm tài chính vừa qua nhờ vào chiến lược quảng cáo hiệu quả",
+                    "Doanh nghiệp nhỏ và vừa"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "tham gia": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Góp phần hoạt động của mình vào một hoạt động chung nào đó",
+                "example": [
+                    "Học sinh thường phải tham gia vào các buổi học và hoạt động giáo dục khác nhau để đạt được mục tiêu học tập",
+                    "Tham gia thi cử"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "hệ thống": {
+        "noun": [
+            {
+                "defination": [
+                    "Tập hợp nhiều yếu tố, đơn vị cùng loại hoặc cùng chức năng, có quan hệ hoặc liên hệ với nhau chặt chẽ, làm thành một thể thống nhất",
+                    "Tập hợp những tư tưởng, nguyên tắc, quy tắc liên kết với nhau một cách logic, làm thành một thể thống nhất"
+                ],
+                "example": [
+                    "Hệ thống giáo dục",
+                    "Hệ thống đèn giao thông"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Làm cho thứ gì đó trở nên có trật tự, tổ chức hơn",
+                "example": [
+                    "Cần phải hệ thống lại các tài liệu trong thư viện để học sinh có thể dễ dàng tìm kiếm",
+                    "Hệ thống lại ban cán sự trong lớp"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "chia sẻ": {
+        "noun": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "Là việc truyền đạt thông tin, kinh nghiệm, tài nguyên, hay cảm xúc với người khác. Hành động này có thể xảy ra trong nhiều lĩnh vực, bao gồm cả sự chia sẻ kiến thức, cảm xúc, hoặc tài sản với cộng đồng. Chia sẻ giúp tạo ra một môi trường tương tác và hỗ trợ giữa các cá nhân hay tổ chức",
+                "example": [
+                    "Các thầy cô luôn tận tâm chia sẻ kinh nghiệm mà mình có được cho thế hệ mai sau",
+                    "Chia sẻ thông tin trên mạng xã hội"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "quốc tế": {
+        "noun": [
+            {
+                "defination": [
+                    "Các nước trên thế giới trong quan hệ với nhau (nói tổng quát)"
+                ],
+                "example": [
+                    "Phong trào công nhân quốc tế"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "Thuộc về quan hệ giữa các nước trên thế giới",
+                "example": [
+                    "Sân bay quốc tế",
+                    "Hội nghị quốc tế"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ],
+        "audio": [
+            {
+                "url": "",
+                "title": ""
+            }
+        ]
+    },
+    "ngọn núi": {
+        "noun": [
+            {
+                "defination": [
+                    "Là một điểm cao đất địa hình, thường được tạo thành từ đá và nằm ở độ cao lớn hơn so với môi trường xung quanh. Các ngọn núi có thể đứng độc lập hoặc tạo thành một dãy núi"
+                ],
+                "example": [
+                    "Dãy núi Himalaya là một trong những dãy núi cao nhất thế giới, với nhiều ngọn núi vượt qua độ cao 8,000 mét"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "verb": [
+            {
+                "defination": "",
+                "example": [],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "adj": [
+            {
+                "defination": "Thuộc về quan hệ giữa các nước trên thế giới",
+                "example": [
+                    "Sân bay quốc tế",
+                    "Hội nghị quốc tế"
+                ],
+                "synonyms": [],
+                "antonyms": []
+            }
+        ],
+        "img": [
+            {
+                "url": "https://drive.google.com/file/d/16-nFkiLzExYiWI_qAmDKc_OzNmnNGLAw/view?usp=drive_link",
                 "title": ""
             }
         ],
