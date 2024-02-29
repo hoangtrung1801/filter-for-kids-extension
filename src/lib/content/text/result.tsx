@@ -11,6 +11,34 @@ function searchAcronym(jsonData, selectedText) {
     return jsonData[selectedText];
 }
 
+function checkGreyButton(wordDict, selectedText){
+	let check : boolean[] = [true,true,true];
+	
+	if (
+		(typeof wordDict[selectedText] === "undefined" ||
+		(typeof wordDict[selectedText].noun[0].defination === "string" &&
+			wordDict[selectedText].noun[0].defination.length === 0))
+	) {
+		check[0] = false;
+	}
+	if (
+		(typeof wordDict[selectedText] === "undefined" ||
+		(typeof wordDict[selectedText].verb[0].defination === "string" &&
+			wordDict[selectedText].verb[0].defination.length === 0))
+	) {
+		check[1] = false;
+	}
+	if (
+		(typeof wordDict[selectedText] === "undefined" ||
+		(typeof wordDict[selectedText].adj[0].defination === "string" &&
+			wordDict[selectedText].adj[0].defination.length === 0))
+	) {
+		check[2] = false;
+	}
+
+	return check;
+}
+
 export default function ResultPopup(props) {
 
     // let contentText = [];
@@ -25,28 +53,31 @@ export default function ResultPopup(props) {
     
     const [selectedButton, setSelectedButton] = useState(null);
     const [contentWord, setContentWord] = useState([])
+    const [greyButton, setGreyButton] = useState([]);
 
     // check han viet, viet tat
-        if (!(typeof acronym === "undefined")) {
-            showAcronym = true;
-            showWord = false;
-            showSinoViet= false;
-        }
-        else if(hanviet.words.find(word => word.hanviet === props.selectedText)){
-            showAcronym = false;
-            showWord = false;
-            showSinoViet= true;
-            hanvietWord = hanviet.words.find(word => word.hanviet === props.selectedText).meaning.split("/").join(", ")	
-        }
-        else{
-            showAcronym = false;
-            showWord = true;
-            showSinoViet= false;
-        }
-
+    if (!(typeof acronym === "undefined")) {
+        showAcronym = true;
+        showWord = false;
+        showSinoViet= false;
+    }
+    else if(hanviet.words.find(word => word.hanviet === props.selectedText)){
+        showAcronym = false;
+        showWord = false;
+        showSinoViet= true;
+        hanvietWord = hanviet.words.find(word => word.hanviet === props.selectedText).meaning.split("/").join(", ")	
+    }
+    else{
+        showAcronym = false;
+        showWord = true;
+        showSinoViet= false;
+    }
+    
     useEffect(() =>{
+        // data ban dau
         if(contentWord.length==0){
-            // data ban dau
+            
+            
             if (
                 !(typeof wordDict[props.selectedText] === "undefined" ||
                 (typeof wordDict[props.selectedText].noun[0].defination === "string" &&
@@ -77,6 +108,7 @@ export default function ResultPopup(props) {
                 setContentWord(contentText);
                 setSelectedButton("adj");
             }
+            setGreyButton(checkGreyButton(wordDict,props.selectedText))
         }
         
     },[selectedButton])
@@ -104,9 +136,9 @@ export default function ResultPopup(props) {
             </div>
             {showWord &&(
             <div className="typeword-itv">
-                <div className={selectedButton === "noun" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={()=>handleTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url],"noun")}>Danh Từ</div>
-                <div className={selectedButton === "verb" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={()=>handleTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url],"verb")}>Động Từ</div>
-                <div className={selectedButton === "adj" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={()=>handleTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url],"adj")}>Tính Từ</div>
+                <div style={greyButton[0] === false ? {background:"#d9d9d9", color:"#b8baba"}:{}} className={selectedButton === "noun" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={greyButton[0]===false?null:()=>handleTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url],"noun")}>Danh Từ</div>
+                <div style={greyButton[1] === false ? {background:"#d9d9d9", color:"#b8baba"}:{}} className={selectedButton === "verb" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={greyButton[1]===false?null:()=>handleTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url],"verb")}>Động Từ</div>
+                <div style={greyButton[2] === false ? {background:"#d9d9d9", color:"#b8baba"}:{}} className={selectedButton === "adj" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={greyButton[2]===false?null:()=>handleTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url],"adj")}>Tính Từ</div>
             </div>
             )}
             {showWord &&(
