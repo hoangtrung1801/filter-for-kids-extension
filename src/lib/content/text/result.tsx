@@ -7,10 +7,6 @@ import logoITV from "data-base64:assets/logo-itv.png"
 import backgroundImg from "data-base64:assets/background.png"
 import { useState, useEffect } from "react";
 
-function searchAcronym(jsonData, selectedText) {
-    return jsonData[selectedText];
-}
-
 function checkGreyButton(wordDict, selectedText){
 	let check : boolean[] = [true,true,true];
 	
@@ -41,37 +37,11 @@ function checkGreyButton(wordDict, selectedText){
 
 export default function ResultPopup(props) {
 
-    // let contentText = [];
-    let acronym = searchAcronym(acronymDict,props.selectedText)
-    let showAcronym;
-    let showSinoViet;
-    let showWord;
-    let hanvietWord;
-    let haveNoun;
-    let haveVerb;
-    let haveAdj;
     
     const [selectedButton, setSelectedButton] = useState(null);
     const [contentWord, setContentWord] = useState([])
     const [greyButton, setGreyButton] = useState([]);
 
-    // check han viet, viet tat
-    if (!(typeof acronym === "undefined")) {
-        showAcronym = true;
-        showWord = false;
-        showSinoViet= false;
-    }
-    else if(hanviet.words.find(word => word.hanviet === props.selectedText)){
-        showAcronym = false;
-        showWord = false;
-        showSinoViet= true;
-        hanvietWord = hanviet.words.find(word => word.hanviet === props.selectedText).meaning.split("/").join(", ")	
-    }
-    else{
-        showAcronym = false;
-        showWord = true;
-        showSinoViet= false;
-    }
     
     useEffect(() =>{
         // data ban dau
@@ -85,6 +55,7 @@ export default function ResultPopup(props) {
             ) {
                 console.log("have noun");
                 let contentText = [wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url];
+                // .map((word,index)=>(<span key={index}>{word}</span>))
                 setContentWord(contentText);
                 setSelectedButton("noun");
             }
@@ -134,38 +105,23 @@ export default function ResultPopup(props) {
                     <img src={logoITV} alt="Error img" />
                 </div>
             </div>
-            {showWord &&(
             <div className="typeword-itv">
                 <div style={greyButton[0] === false ? {background:"#d9d9d9", color:"#b8baba"}:{}} className={selectedButton === "noun" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={greyButton[0]===false?null:()=>handleTypeWord([wordDict[props.selectedText].noun[0].defination,wordDict[props.selectedText].noun[0].example,wordDict[props.selectedText].noun[0].synonyms,wordDict[props.selectedText].noun[0].antonyms,wordDict[props.selectedText].img[0].url],"noun")}>Danh Từ</div>
                 <div style={greyButton[1] === false ? {background:"#d9d9d9", color:"#b8baba"}:{}} className={selectedButton === "verb" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={greyButton[1]===false?null:()=>handleTypeWord([wordDict[props.selectedText].verb[0].defination,wordDict[props.selectedText].verb[0].example,wordDict[props.selectedText].verb[0].synonyms,wordDict[props.selectedText].verb[0].antonyms,wordDict[props.selectedText].img[0].url],"verb")}>Động Từ</div>
                 <div style={greyButton[2] === false ? {background:"#d9d9d9", color:"#b8baba"}:{}} className={selectedButton === "adj" ? 'typeword-button-selected-itv' : 'typeword-button-itv'} onClick={greyButton[2]===false?null:()=>handleTypeWord([wordDict[props.selectedText].adj[0].defination,wordDict[props.selectedText].adj[0].example,wordDict[props.selectedText].adj[0].synonyms,wordDict[props.selectedText].adj[0].antonyms,wordDict[props.selectedText].img[0].url],"adj")}>Tính Từ</div>
             </div>
-            )}
-            {showWord &&(
             <div className="content-itv">
                 <div className="content-text-itv">
                     <div className="word-explain"><span>Mô tả</span>{contentWord[0]}</div>
-                    <div className="word-example"><span>Ví dụ:</span>{contentWord[1]}</div>
-                    <div className="syntonym"><span>Đồng nghĩa:</span>{contentWord[2]}</div>
-                    <div className="antonym"><span>Trái nghĩa</span>{contentWord[3]}</div>
+                    <div className="word-example"><span>Ví dụ:</span>{contentWord.length === 0 ? "":contentWord[1].join(", ")}</div>
+                    <div className="syntonym"><span>Đồng nghĩa:</span>{contentWord.length === 0 ? "":contentWord[2].join(", ")}</div>
+                    <div className="antonym"><span>Trái nghĩa</span>{contentWord.length === 0 ? "":contentWord[3].join(", ")}</div>
                 </div>
                 <div className="content-img-itv">
                     <img style={{ width:"250px" }} src={contentWord[4]} alt="" />
                 </div>
             </div>
-            )}
-            {showAcronym &&(            
-            <div className="acronym-itv">
-                <div>Từ Viết Tắt</div>
-                <div>{acronym}</div>
-            </div>
-            )}
-            {showSinoViet &&(
-            <div className="sinoword-itv">
-                <div>Từ Hán Việt</div>
-                <div>{hanvietWord}</div>
-            </div>
-            )}
+        
         </div>
     );
 }
