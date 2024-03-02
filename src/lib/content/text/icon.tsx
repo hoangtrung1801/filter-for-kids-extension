@@ -1,11 +1,13 @@
 import acronymDict from "assets/dict_acronym.json";
 import wordDict from "assets/word.json";
-import hanviet from "assets/hanviet.json";
+import hanvietDict from "assets/hanviet.json";
 
 import Icon from "react:assets/iconn.svg"
 import ResultPopup from "./result";
 import React from "react";
 import ReactDom from "react-dom"
+import AcronymResultPopup from "./acronymResult";
+import SinoResultPopup from "./sinowordResult";
 
 export default function IconPopup(props) {
   return (
@@ -52,12 +54,13 @@ function searchWord(wordDict, selectedText){
 }
 
 function showResultPopup(mousePos,selectedText){
-	if(!searchAcronym(acronymDict,selectedText) && !searchSino(hanviet,selectedText) && !searchWord(wordDict,selectedText)){
+	if(!searchAcronym(acronymDict,selectedText) && !searchSino(hanvietDict,selectedText) && !searchWord(wordDict,selectedText)){
 		console.log("Dictionary do not have that word");	
 		const icon = document.querySelector("svg#icon");
 		icon.remove();
 	}
-	else{
+	// bug
+	else if(!searchAcronym(acronymDict,selectedText) && !searchSino(hanvietDict,selectedText) && searchWord(wordDict,selectedText)){
 		const container = document.createElement("div");
 		ReactDom.render(<ResultPopup selectedText={selectedText} mousePos={mousePos}/>, container);
 		document.body.appendChild(container);
@@ -66,6 +69,41 @@ function showResultPopup(mousePos,selectedText){
 		// console.log(searchWord(wordDict,selectedText));
 		const icon = document.querySelector("svg#icon");
 		icon.remove();
+	}
+	else if(!searchAcronym(acronymDict,selectedText) && searchSino(hanvietDict,selectedText) && searchWord(wordDict,selectedText)){
+		const container = document.createElement("div");
+		ReactDom.render(<ResultPopup selectedText={selectedText} mousePos={mousePos}/>, container);
+		document.body.appendChild(container);
+		// console.log(searchSino(hanviet,selectedText));
+		// console.log(searchAcronym(acronymDict,selectedText));
+		// console.log(searchWord(wordDict,selectedText));
+		const icon = document.querySelector("svg#icon");
+		icon.remove();
+	}
+	else if(!searchAcronym(acronymDict,selectedText) && searchSino(hanvietDict,selectedText) && !searchWord(wordDict,selectedText)){
+		const container = document.createElement("div");
+		ReactDom.render(<SinoResultPopup selectedText={selectedText} mousePos={mousePos}/>, container);
+		document.body.appendChild(container);
+		// console.log(searchSino(hanviet,selectedText));
+		// console.log(searchAcronym(acronymDict,selectedText));
+		// console.log(searchWord(wordDict,selectedText));
+		const icon = document.querySelector("svg#icon");
+		icon.remove();
+	}
+	else if(searchAcronym(acronymDict,selectedText) && searchSino(hanvietDict,selectedText) && !searchWord(wordDict,selectedText)){
+		const container = document.createElement("div");
+		ReactDom.render(<AcronymResultPopup selectedText={selectedText} mousePos={mousePos}/>, container);
+		document.body.appendChild(container);
+		// console.log(searchSino(hanviet,selectedText));
+		// console.log(searchAcronym(acronymDict,selectedText));
+		// console.log(searchWord(wordDict,selectedText));
+		const icon = document.querySelector("svg#icon");
+		icon.remove();
+	}
+	else{
+		console.log("ko thoa man dieu kien nao");
+		console.log(hanvietDict.words.find(word => word.hanviet === selectedText));
+		
 	}
 }
 
