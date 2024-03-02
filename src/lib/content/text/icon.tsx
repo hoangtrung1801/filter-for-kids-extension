@@ -60,7 +60,17 @@ function showResultPopup(mousePos,selectedText){
 		icon.remove();
 	}
 	// bug
-	else if(!searchAcronym(acronymDict,selectedText) && (searchSino(hanvietDict,selectedText) || searchWord(wordDict,selectedText))){
+	else if(!searchAcronym(acronymDict,selectedText) && !searchSino(hanvietDict,selectedText) && searchWord(wordDict,selectedText)){
+		const container = document.createElement("div");
+		ReactDom.render(<ResultPopup selectedText={selectedText} mousePos={mousePos}/>, container);
+		document.body.appendChild(container);
+		// console.log(searchSino(hanviet,selectedText));
+		// console.log(searchAcronym(acronymDict,selectedText));
+		// console.log(searchWord(wordDict,selectedText));
+		const icon = document.querySelector("svg#icon");
+		icon.remove();
+	}
+	else if(!searchAcronym(acronymDict,selectedText) && searchSino(hanvietDict,selectedText) && searchWord(wordDict,selectedText)){
 		const container = document.createElement("div");
 		ReactDom.render(<ResultPopup selectedText={selectedText} mousePos={mousePos}/>, container);
 		document.body.appendChild(container);
