@@ -11,7 +11,7 @@ export default class ViolentModel extends Model {
 
 		this.name = "Violent Model";
 		this.type = IType.IMAGE;
-		this.IMG_SIZE = 128;
+		this.IMG_SIZE = 256;
 
 		this.loadModel();
 	}
@@ -38,29 +38,42 @@ export default class ViolentModel extends Model {
 		}
 	}
 
-	private async analyze(
-		imageData:
-			| ImageData
-			| { data: Uint8Array; width: number; height: number }
-	) {
+	private async analyze(imageData: number[]) {
 		return tf.tidy(() => {
-			const imgTensor = tf.browser.fromPixels(imageData);
-			const normalized = imgTensor
-				.toFloat()
-				.div(tf.scalar(255)) as tf.Tensor3D;
-			let resized = normalized;
-			if (
-				imgTensor.shape[0] !== this.IMG_SIZE ||
-				imgTensor.shape[1] !== this.IMG_SIZE
-			) {
-				resized = tf.image.resizeBilinear(
-					normalized,
-					[this.IMG_SIZE, this.IMG_SIZE],
-					true
-				);
-			}
+			const imgData = new ImageData(this.IMG_SIZE, this.IMG_SIZE);
+			imgData.data.set(new Uint8ClampedArray(imageData));
 
-			const batched = resized.reshape([
+			const imgTensor = tf.cast(
+				tf.browser.fromPixels(imgData),
+				"float32"
+			);
+
+			const offset = tf.scalar(127.5);
+			const normalized = imgTensor.sub(offset).div(offset);
+			// const normalized = imgTensor
+			// 	.toFloat()
+			// 	.div(tf.scalar(255)) as tf.Tensor3D;
+
+			// let resized = normalized;
+			// if (
+			// 	imgTensor.shape[0] !== this.IMG_SIZE ||
+			// 	imgTensor.shape[1] !== this.IMG_SIZE
+			// ) {
+			// 	resized = tf.image.resizeBilinear(
+			// 		normalized,
+			// 		[this.IMG_SIZE, this.IMG_SIZE],
+			// 		true
+			// 	);
+			// }
+
+			// const batched = resized.reshape([
+			// 	1,
+			// 	this.IMG_SIZE,
+			// 	this.IMG_SIZE,
+			// 	3
+			// ]);
+
+			const batched = normalized.reshape([
 				1,
 				this.IMG_SIZE,
 				this.IMG_SIZE,
@@ -69,28 +82,70 @@ export default class ViolentModel extends Model {
 
 			// this model is multi output, third output is the one we want (violent level)
 			const predictions = this.model.predict(batched) as tf.Tensor[];
-			return predictions[2];
+			return predictions;
 		});
 	}
 
 	public process(payload: any): Promise<boolean> {
 		return new Promise(async (resolve, reject) => {
 			try {
-				const { imgData, tabId } = payload;
+				const { imgData: rawImgData, tabId } = payload;
 
-				const prediction = await this.analyze({
-					data: Uint8Array.from(imgData),
-					width: this.IMG_SIZE,
-					height: this.IMG_SIZE
+				// the rawImgData after passing chrome.runtime is object like array
+				// so we need to convert it back to arra
+				const imgData = Object.values(rawImgData) as number[];
+				const preds = await this.analyze(imgData);
+
+				const violenceData = await preds[0].data();
+				const humanData = await preds[1].data();
+
+				// get the index of the highest value
+				const violenceIndex = violenceData.indexOf(
+					Math.max(...violenceData)
+				);
+				const humanIndex = humanData.indexOf(Math.max(...humanData));
+
+				const nonHumanScore = humanData[0];
+				const humanScore = humanData[1];
+				const nonViolenceScore = violenceData[0];
+				const violenceScore = violenceData[1];
+
+				console.log({
+					humanIndex,
+					violenceIndex,
+					nonHumanScore,
+					humanScore,
+					nonViolenceScore,
+					violenceScore
 				});
-				const result = await prediction.data();
-				const level = (await tf.argMax(result).data())[0];
 
-				if (level === 0) {
-					resolve(false);
-				} else {
+				// const violenceResult = (
+				// 	await tf.argMax(await preds[1].data()).data()
+				// )[0];
+				// const humanResult = (
+				// 	await tf.argMax(await preds[0].data()).data()
+				// )[0];
+
+				// console.log({
+				// 	humanResult: await preds[0].data(),
+				// 	violenceResult: await preds[1].data()
+				// });
+				// if (violenceIndex + humanIndex === 2) {
+				// if (humanScore + violenceScore > 1.5) {
+				if (violenceIndex === 1) {
 					resolve(true);
+				} else {
+					resolve(false);
 				}
+
+				// const result = await prediction.data();
+				// const level = (await tf.argMax(result).data())[0];
+
+				// if (level === 0) {
+				// 	resolve(false);
+				// } else {
+				// 	resolve(true);
+				// }
 			} catch (e) {
 				reject(e);
 			}

@@ -7,7 +7,15 @@ import Filter from "./Filter";
 
 export default class ImageFilter extends Filter {
 	public async analyze(target: Element) {
-		if (target.nodeName !== "IMG") return;
+		if (target.nodeName !== "IMG") {
+			// const imgEles = target.getElementsByTagName("img");
+			// console.log({ imgEles });
+			// for (let i = 0; i < imgEles.length; i++) {
+			// 	await this.analyze(imgEles[i]);
+			// }
+
+			return;
+		}
 		const img = target as HTMLImageElement;
 
 		// analyze
@@ -21,9 +29,11 @@ export default class ImageFilter extends Filter {
 		// 	? base64ToArrayBuffer(img.src)
 		// 	: await loadImage(img.src);
 		const imgData = await loadImage(img.src);
+		console.log({ imgData });
 		const req = new Request(IType.IMAGE, imgData, {
 			url: img.src
 		});
+
 		chrome.runtime.sendMessage(req, (res: Response) => {
 			if (!res) {
 				img.style.border = "10px solid gray";

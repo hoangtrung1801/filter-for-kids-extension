@@ -6,7 +6,7 @@ class Model {
 	model: tf.LayersModel | tf.GraphModel;
 
 	protected name: string;
-	protected IMG_SIZE = 224;
+	protected IMG_SIZE = 256;
 	protected LOADING_TIMEOUT = 5000;
 	protected modelPath: string;
 

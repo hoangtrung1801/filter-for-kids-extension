@@ -8,9 +8,9 @@ import type Request from "~lib/Request";
 import { IType } from "~lib/Request";
 
 export const config: PlasmoCSConfig = {
-	matches: ["https://www.google.com/*"],
+	matches: ["https://www.google.com/*", "http://localhost:*/*"],
 	all_frames: true,
-	run_at: "document_start",
+	run_at: "document_start"
 };
 
 chrome.runtime.onMessage.addListener(
@@ -29,7 +29,7 @@ chrome.runtime.onMessage.addListener(
 );
 
 const init = async (): Promise<void> => {
-	console.log("hello, wolrd [plugin]c");
+	console.log("hello, wolrd [plugin]");
 
 	const imageFilter = new ImageFilter();
 	const domWatcher = new DOMWatcher(imageFilter);
