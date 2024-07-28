@@ -50,6 +50,8 @@ export default class ViolentModel extends Model {
 
 			const offset = tf.scalar(127.5);
 			const normalized = imgTensor.sub(offset).div(offset);
+			// const normalized = imgTensor.div(offset);
+
 			// const normalized = imgTensor
 			// 	.toFloat()
 			// 	.div(tf.scalar(255)) as tf.Tensor3D;
@@ -116,7 +118,9 @@ export default class ViolentModel extends Model {
 					nonHumanScore,
 					humanScore,
 					nonViolenceScore,
-					violenceScore
+					violenceScore,
+					preds,
+					imgData
 				});
 
 				// const violenceResult = (

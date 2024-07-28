@@ -55,7 +55,6 @@ class Queue {
 
 	private async process() {
 		const task = this.shift();
-		console.info("I AM PROCESSING", task);
 		// model predict
 		const {
 			type,
@@ -75,7 +74,6 @@ class Queue {
 					});
 					result.push(prediction);
 				}
-				console.log("result", result);
 				const prediction = result.some((result) => result);
 				this.cache.set(url, prediction);
 				this.requestMap
@@ -89,7 +87,6 @@ class Queue {
 		} else if (type === IType.TEXT) {
 		}
 
-		console.log("REST", this.tasks.length);
 		if (this.tasks.length > 0) {
 			setTimeout(() => this.process(), this.timeout);
 		} else {

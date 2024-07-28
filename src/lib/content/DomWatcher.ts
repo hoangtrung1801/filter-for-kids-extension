@@ -37,7 +37,6 @@ export default class DOMWatcher implements IDOMWatcher {
 			// 	mutation.addedNodes.length > 0
 			// ) {
 			// }
-			console.log(mutation.target);
 			await this.filter.analyze(mutation.target);
 		}
 	}
